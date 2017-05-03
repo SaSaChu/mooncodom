@@ -83,7 +83,14 @@ footer {
     max-width: $allwidth;
     height: 125px;
     margin: 0 auto;
-    border: 1px solid rgba(255, 0, 0, .3);
+
+    @include range-width(690px, 1190px) {
+      margin: 0 10px;
+    }
+
+    @include range-width(0, 690px) {
+      height: auto;
+    }
 
     @include split-left(250px ,'.footerlogo', '.footercopy');
 
@@ -91,15 +98,28 @@ footer {
       display: inline-block;
       padding: 41px 0;
 
+      @include range-width(0, 690px) {
+        width: 100%;
+        padding: 25px 0;
+      }
+
       img {
         width: 100%;
         height: auto;
+
+        @include range-width(0, 690px) {
+          width: 50%;
+        }
       }
     }
 
     .footercopy {
       display: inline-block;
       @include clearfix();
+
+      @include range-width(0, 690px) {
+        width: 100%;
+      }
 
       .footerlink, .copyright {
         display: inline-block;

@@ -5,19 +5,19 @@
 
 @import "_oa";
 
-// @include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
-// @include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
-// [class^="icon-"], [class*=" icon-"] {
-//   font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
-//   speak: none;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-variant: normal;
-//   text-transform: none;
-//   line-height: 1;
+@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-//   @include font-smoothing(antialiased);
-// }
+  @include font-smoothing(antialiased);
+}
 
 * {
   &, &:after, &:before {
@@ -47,9 +47,41 @@ html {
   }
 }
 
+
+.icon-google:before {
+  content: "\e900";
+}
+.icon-twitter:before {
+  content: "\e904";
+}
+.icon-youtube:before {
+  content: "\e901";
+}
+.icon-social-facebook:before {
+  content: "\e907";
+}
+.icon-search:before {
+  content: "\e902";
+}
+.icon-envelope:before {
+  content: "\e903";
+}
+.icon-user:before {
+  content: "\e905";
+}
+.icon-cart:before {
+  content: "\e906";
+}
+
+
+$allwidth: 1170px;
+
 $orange: rgba(255, 74, 4, 1.00);
 $deepblue: rgba(23, 28, 35, 1.00);
-$allwidth: 1170px;
+$grey: rgba(102, 102, 102, 1.00);
+
+$bglightgrey: rgba(248, 248, 248, 1.00);
+
 
 // Top Header
 #top {
@@ -74,8 +106,184 @@ $allwidth: 1170px;
 }
 
 
+
+
+
+// News
+#newsboxs {
+  display: inline-block;
+  width: 100%;
+  background-color: $bglightgrey;  
+
+  .newstitle, .newsbox {
+    display: inline-block;
+    max-width: $allwidth;
+    margin: 0 auto;
+  }
+
+  .newstitle {
+    padding: 20px 0;
+    position: relative;
+
+    p {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      font-size: 1.6em;
+      font-weight: 600;
+      white-space: pre-wrap;
+
+      &:before {
+        display: inline-block;
+        content: '';
+        width: 65px;
+        height: 2px;
+        background-color: $orange;
+        position: absolute;
+        top: 38px;
+        left: -80px;
+      }
+
+      &:after {
+        display: inline-block;
+        content: '';
+        width: 65px;
+        height: 2px;
+        background-color: $orange;
+        position: absolute;
+        top: 38px;
+        right: -80px;
+      }
+    }
+  }
+  
+  .n_picboxs {
+    display: inline-block;
+    width: 100%;
+
+    @include clearfix();
+
+    > div {
+      display: inline-block;
+      float: left;
+      width: calc(100% / 4);
+      height: 310px;
+      background-color: rgba(0, 0, 255, 0.2);
+
+      &:nth-child(2n + 2) {
+        border: 1px solid rgba(255, 0, 0, .3);
+      }
+    }
+  }
+  
+  .newsbox {
+    padding: 90px 0;
+
+    @include split-left(130px, '.newsleft', '.newsright');
+
+    .newsleft {
+      margin-right: 30px;
+      height: 100px;
+      background-color: rgba(0, 0, 255, 0.2);
+    }
+
+    .newsright {
+      height: 100px;
+      background-color: rgba(0, 128, 0, 0.2);
+    }
+  }
+}
+
+
+
+
+
+// About
+#aboutboxs {
+  display: inline-block;
+  width: 100%;
+  padding: 80px 0;
+
+  @include range-width(325px, 690px) {
+    padding: 60px 0;
+  }
+
+  @include range-width(0, 325px) {
+    padding: 40px 0;
+  }
+
+  #aboutbox {
+    display: inline-block;
+    max-width: 770px;
+    margin: 0 auto;
+
+    @include range-width(0, 790px) {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    span, p {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      word-spacing: pre-wrap;
+    }
+
+    span {
+      font-size: 1.6em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .6em;
+      padding-bottom: 15px;
+      color: $deepblue;
+
+      @include range-width(0, 690px) {
+        font-size: 1.4em;
+      }
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+      font-size: 1em;
+      font-weight: 400;
+      line-height: 1.8em;
+      color: $grey;
+
+      @include range-width(0, 690px) {
+        font-size: .9em;
+        line-height: 1.6em;
+      }
+    }
+
+    .abouticonboxs {
+      display: inline-block;
+      width: 100%;
+      margin-top: 20px;
+
+      a {
+        display: inline-block;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+        color: $deepblue;
+        text-decoration: none;
+        @include transition(all .3s);
+
+        &:hover, &:active {
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+
+
+
 // News Letter
-#letterbg {
+#letterboxs {
   display: inline-block;
   width: 100%;
   padding: 130px 0;
@@ -89,109 +297,106 @@ $allwidth: 1170px;
     padding: 80px 0;
   }
 
-  #letterboxs {
+  #letterbox {
     display: inline-block;
-    max-width: $allwidth;
+    max-width: 770px;
     margin: 0 auto;
 
     @include range-width(0, 790px) {
+      width: 100%;
       padding: 0 20px;
     }
 
-    #letterbox {
+    span, p, .importboxs {
       display: inline-block;
-      max-width: 770px;
-      margin: 0 auto;
+      width: 100%;
+    }
 
-      span, p, .importboxs {
-        display: inline-block;
-        width: 100%;
-      }
+    span, p {
+      color: white;
+      text-align: center;
+      word-spacing: pre-wrap;
+    }
 
-      span, p {
-        color: white;
-        text-align: center;
-        word-spacing: pre-wrap;
-      }
+    span {
+      font-size: 1.6em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .6em;
+      padding-bottom: 15px;
 
-      span {
-        font-size: 1.6em;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: .6em;
-        padding-bottom: 15px;
-
-        @include range-width(0, 690px) {
-          font-size: 1.4em;
-        }
-      }
-
-      p {
-        padding: 0;
-        margin: 0;
-        font-size: 1em;
-        font-weight: 400;
-        line-height: 1.8em;
-
-        @include range-width(0, 690px) {
-          font-size: .9em;
-          line-height: 1.6em;
-        }
-      }
-
-      .importboxs {
-        margin-top: 15px;
-        @include clearfix();
-
-        input {
-          width: calc(100% - 265px - 20px);
-          display: inline-block;
-          float: left;
-          border: 0;
-          padding: 16px;
-          background-color: white;
-          color: $deepblue;
-          font-weight: 400;
-          margin-right: 20px;
-          font-size: 1.2em;
-          outline: 0;
-
-          @include range-width(0, 690px) {
-            width: 100%;
-            margin-right: 0;
-            margin-bottom: 20px;
-          }
-        }
-
-        button {
-          width: 265px;
-          float: right;
-          padding: 15px;
-          cursor: pointer;
-          background-color: transparent;
-          border: 1px white solid;
-          color: white; 
-          text-transform: uppercase;
-          font-weight: 600;
-          font-size: 1.2em;
-
-          &:hover, &:active {
-            color: $orange;
-            border: 1px solid $orange;
-            @include transition(all .3s);
-          }
-
-          @include range-width(0, 690px) {
-            width: 50%;
-            float: none;
-          }
-
-        }
-
+      @include range-width(0, 690px) {
+        font-size: 1.4em;
       }
     }
+
+    p {
+      padding: 0;
+      margin: 0;
+      font-size: 1em;
+      font-weight: 400;
+      line-height: 1.8em;
+
+      @include range-width(0, 690px) {
+        font-size: .9em;
+        line-height: 1.6em;
+      }
+    }
+
+    .importboxs {
+      margin-top: 15px;
+      @include clearfix();
+
+      input {
+        width: calc(100% - 265px - 20px);
+        display: inline-block;
+        float: left;
+        border: 0;
+        padding: 16px;
+        background-color: white;
+        color: $deepblue;
+        font-weight: 400;
+        margin-right: 20px;
+        font-size: 1.2em;
+        outline: 0;
+
+        @include range-width(0, 690px) {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+
+      button {
+        width: 265px;
+        float: right;
+        padding: 15px;
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px white solid;
+        color: white; 
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.2em;
+
+        &:hover, &:active {
+          color: $orange;
+          border: 1px solid $orange;
+          @include transition(all .3s);
+        }
+
+        @include range-width(0, 690px) {
+          width: 50%;
+          float: none;
+        }
+
+      }
+
+    }
+    
   }
 }
+
 
 
 

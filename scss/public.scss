@@ -1,0 +1,178 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+// @include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+// @include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
+// [class^="icon-"], [class*=" icon-"] {
+//   font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+//   speak: none;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-variant: normal;
+//   text-transform: none;
+//   line-height: 1;
+
+//   @include font-smoothing(antialiased);
+// }
+
+* {
+  &, &:after, &:before {
+    vertical-align: top;
+    @include box-sizing(border-box);
+    @include selection(rgba(150, 200, 255, 1), rgba(255, 255, 255, 1));
+    @include font-smoothing(antialiased);
+  }
+}
+
+html {
+  height: 100%;
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: medium;
+    font-family: "Roboto", "微軟正黑體", Monaco, "Microsoft JhengHei" ;
+    background-color: white;
+    color: rgba(40, 51, 66, 1.00);
+
+    @include font-smoothing(antialiased);
+  }
+}
+
+$orange: rgba(255, 74, 4, 1.00);
+$deepblue: rgba(23, 28, 35, 1.00);
+$allwidth: 1170px;
+
+
+#top {
+  display: inline-block;
+  max-width: $allwidth;
+  height: 140px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 0, 0, .3);
+
+  @include split-left(215px ,'.toplogo', '.topnav');
+
+  .toplogo {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .topnav {
+    color: white;
+  }
+}
+
+
+footer {
+  display: inline-block;
+  width: 100%;
+  background-color: $deepblue;
+
+  #footerboxs {
+    max-width: $allwidth;
+    height: 125px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 0, 0, .3);
+
+    @include split-left(250px ,'.footerlogo', '.footercopy');
+
+    .footerlogo {
+      display: inline-block;
+      padding: 41px 0;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .footercopy {
+      display: inline-block;
+      @include clearfix();
+
+      .footerlink, .copyright {
+        display: inline-block;
+        width: 100%;
+        font-size: 13px;
+        color: rgba(197, 197, 197, 1.00);
+      }
+      
+      .footerlink {
+        padding: 43px 0 10px 0;
+        @include clearfix();
+
+        > div {
+          display: inline-block;
+          float: right;
+
+          &:after {
+            display: inline-block;
+            content: '│';
+            margin: 0 10px;
+          }
+
+          a {
+            display: inline-block;
+            float: right;
+            cursor: pointer;
+            font-size: 13px;
+            text-decoration: none;
+            color: rgba(197, 197, 197, 1.00);
+
+            &:hover {
+              color: $orange;
+            }
+          }
+
+          &:last-child {
+            &:after {
+              display: inline-block;
+              content: '';
+            }
+          }
+        }        
+      }
+
+      .copyright {
+        text-align: right;
+      }
+      
+    }
+  }  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

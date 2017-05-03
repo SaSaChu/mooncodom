@@ -51,7 +51,7 @@ $orange: rgba(255, 74, 4, 1.00);
 $deepblue: rgba(23, 28, 35, 1.00);
 $allwidth: 1170px;
 
-
+// Top Header
 #top {
   display: inline-block;
   max-width: $allwidth;
@@ -74,6 +74,128 @@ $allwidth: 1170px;
 }
 
 
+// News Letter
+#letterbg {
+  display: inline-block;
+  width: 100%;
+  padding: 130px 0;
+  background-color: rgba(36, 43, 50, 1.00);
+
+  @include range-width(325px, 690px) {
+    padding: 100px 0;
+  }
+
+  @include range-width(0, 325px) {
+    padding: 80px 0;
+  }
+
+  #letterboxs {
+    display: inline-block;
+    max-width: $allwidth;
+    margin: 0 auto;
+
+    @include range-width(0, 790px) {
+      padding: 0 20px;
+    }
+
+    #letterbox {
+      display: inline-block;
+      max-width: 770px;
+      margin: 0 auto;
+
+      span, p, .importboxs {
+        display: inline-block;
+        width: 100%;
+      }
+
+      span, p {
+        color: white;
+        text-align: center;
+        word-spacing: pre-wrap;
+      }
+
+      span {
+        font-size: 1.6em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .6em;
+        padding-bottom: 15px;
+
+        @include range-width(0, 690px) {
+          font-size: 1.4em;
+        }
+      }
+
+      p {
+        padding: 0;
+        margin: 0;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.8em;
+
+        @include range-width(0, 690px) {
+          font-size: .9em;
+          line-height: 1.6em;
+        }
+      }
+
+      .importboxs {
+        margin-top: 15px;
+        @include clearfix();
+
+        input {
+          width: calc(100% - 265px - 20px);
+          display: inline-block;
+          float: left;
+          border: 0;
+          padding: 16px;
+          background-color: white;
+          color: $deepblue;
+          font-weight: 400;
+          margin-right: 20px;
+          font-size: 1.2em;
+          outline: 0;
+
+          @include range-width(0, 690px) {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+          }
+        }
+
+        button {
+          width: 265px;
+          float: right;
+          padding: 15px;
+          cursor: pointer;
+          background-color: transparent;
+          border: 1px white solid;
+          color: white; 
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 1.2em;
+
+          &:hover, &:active {
+            color: $orange;
+            border: 1px solid $orange;
+            @include transition(all .3s);
+          }
+
+          @include range-width(0, 690px) {
+            width: 50%;
+            float: none;
+          }
+
+        }
+
+      }
+    }
+  }
+}
+
+
+
+// Footer
 footer {
   display: inline-block;
   width: 100%;
@@ -107,9 +229,18 @@ footer {
         width: 100%;
         height: auto;
 
-        @include range-width(0, 690px) {
+        @include range-width(690px, 725px) {
+          width: 80%;
+        }
+
+        @include range-width(320px, 690px) {
+          width: 60%;
+        }
+
+        @include range-width(0, 320px) {
           width: 50%;
         }
+
       }
     }
 
@@ -124,7 +255,7 @@ footer {
       .footerlink, .copyright {
         display: inline-block;
         width: 100%;
-        font-size: 13px;
+        font-size: 1em;
         color: rgba(197, 197, 197, 1.00);
       }
       
@@ -154,11 +285,11 @@ footer {
               content: '│';
               margin: 0 10px;
 
-              @include range-width(325px, 690px) {
+              @include range-width(320px, 690px) {
                 margin: 0 5px;
               }
 
-              @include range-width(0, 325px) {
+              @include range-width(0, 320px) {
                 margin: 0 2px;
               }
             }
@@ -167,20 +298,25 @@ footer {
               display: inline-block;
               float: right;
               cursor: pointer;
-              font-size: 13px;
+              font-size: 1em;
               text-decoration: none;
               color: rgba(197, 197, 197, 1.00);
 
-              &:hover {
+              &:hover, &:active {
                 color: $orange;
+                @include transition(all .3s);
               }
 
-              &:active {
-                color: $orange;
+              @include range-width(725px, 760px) {
+                font-size: .9em;
+              }
+
+              @include range-width(325px, 725px) {
+                font-size: .8em;
               }
 
               @include range-width(0, 325px) {
-                font-size: 9px;
+                font-size: .7em;
               }
             }
 
@@ -206,6 +342,7 @@ footer {
         @include range-width(0, 690px) {
           text-align: center;
           padding: 10px 0 20px 0;
+          font-size: .8em;
         }
       }
       

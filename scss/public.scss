@@ -129,43 +129,84 @@ footer {
       }
       
       .footerlink {
+        display: inline-block;
         padding: 43px 0 10px 0;
         @include clearfix();
 
-        > div {
+        @include range-width(0, 690px) {
+          padding: 0;
+        }
+
+        .footerlinkboxs {
           display: inline-block;
           float: right;
 
-          &:after {
-            display: inline-block;
-            content: '│';
-            margin: 0 10px;
+          @include range-width(0, 690px) {
+            float: none;
           }
 
-          a {
+
+          > div {
             display: inline-block;
-            float: right;
-            cursor: pointer;
-            font-size: 13px;
-            text-decoration: none;
-            color: rgba(197, 197, 197, 1.00);
 
-            &:hover {
-              color: $orange;
-            }
-          }
-
-          &:last-child {
             &:after {
               display: inline-block;
-              content: '';
+              content: '│';
+              margin: 0 10px;
+
+              @include range-width(325px, 690px) {
+                margin: 0 5px;
+              }
+
+              @include range-width(0, 325px) {
+                margin: 0 2px;
+              }
             }
-          }
-        }        
+
+            a {
+              display: inline-block;
+              float: right;
+              cursor: pointer;
+              font-size: 13px;
+              text-decoration: none;
+              color: rgba(197, 197, 197, 1.00);
+
+              &:hover {
+                color: $orange;
+              }
+
+              &:active {
+                color: $orange;
+              }
+
+              @include range-width(0, 325px) {
+                font-size: 9px;
+              }
+            }
+
+            &:first-child {
+              &:after {
+                display: inline-block;
+                content: '';
+
+                @include range-width(0, 690px) {
+                  margin: 0;
+                }
+              }
+            }
+          }  
+        }
+
+      
       }
 
       .copyright {
         text-align: right;
+
+        @include range-width(0, 690px) {
+          text-align: center;
+          padding: 10px 0 20px 0;
+        }
       }
       
     }

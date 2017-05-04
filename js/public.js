@@ -4,5 +4,5 @@
  */
 
 $(function () {
-
+  $(".n_picbox").imgLiquid ();
 });

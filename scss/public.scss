@@ -260,8 +260,21 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   width: 100%;
   margin-bottom: 140px;
 
+
   &.tran .box .item {
     @include transition(left .3s);
+  }
+
+  @include range-width(325px, 660px) {
+    padding: 0 10px;
+    margin-bottom: 80px;
+    margin-top: 20px;
+  }
+
+  @include range-width(0, 325px) {
+    padding: 0 10px;
+    margin-bottom: 50px;
+    margin-top: 40px;
   }
 
   .box {
@@ -272,6 +285,37 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     overflow: hidden;
     position: relative;
 
+
+    @include range-width(1065px, 1355px) {
+      width: 875px;
+    }
+
+    @include range-width(860px, 1065px) { 
+      width: 675px;
+      height: 320px;
+    }
+
+    @include range-width(800px, 860px) {
+      width: 575px;
+      height: 320px;
+    }
+
+    @include range-width(660px, 800px) {
+      width: 475px;
+      height: 360px;
+    }
+
+    @include range-width(320px, 660px) {
+      width: 320px;
+      height: 410px;
+    }
+
+    @include range-width(0, 320px) {
+      width: 320px;
+      height: 380px;
+    }
+
+
     .item {
       width: 300px;
       height: 410px;
@@ -280,12 +324,80 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       left: 0;
       padding-right: 30px;
 
-
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) {
           left: 300px * ($i - 2);
         }
       }
+
+      @include range-width(860px, 1065px) {
+        width: 230px;
+        height: 320px;
+        padding-right: 20px;
+
+
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            left: 230px * ($i - 2);
+          }
+        }
+      }
+
+      @include range-width(800px, 860px) {
+        width: 195px;
+        height: 320px;
+        padding-right: 10px;
+
+
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            left: 195px * ($i - 2);
+          }
+        }
+      }
+
+      @include range-width(660px, 800px) {
+        width: 240px;
+        height: 360px;
+        padding-right: 10px;
+
+
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            left: 240px * ($i - 2);
+          }
+        }
+      }
+
+
+      @include range-width(375px, 660px) {
+        width: 320px;
+        height: 380px;
+        padding-right: 10px;
+
+
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            left: 320px * ($i - 2);
+          }
+        }
+      }
+
+
+      @include range-width(0, 325px) {
+        width: 310px;
+        height: 380px;
+        padding-right: 10px;
+
+
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            left: 310px * ($i - 2);
+          }
+        }
+      }
+
+
 
       .p_picboxs {
         display: inline-block;
@@ -293,6 +405,26 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         height: 270px;
         padding: 20px;
         border: 1px solid rgba(224, 224, 224, 1.00);
+
+        @include range-width(860px, 1065px) {
+          height: 200px;
+        }
+
+        @include range-width(800px, 860px) {
+          height: 185px;
+        }
+
+        @include range-width(660px, 800px) {
+          height: 220px;
+        }
+
+        @include range-width(320px, 660px) {
+          height: 300px;
+        }
+
+        @include range-width(0, 320px) {
+          height: 280px;
+        }
 
         a {
           display: inline-block;
@@ -319,6 +451,14 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         display: inline-block;
         width: 100%;
 
+        @include range-width(800px, 860px) {
+          padding: 5px;
+        }
+
+        @include range-width(0, 800px) {
+          padding: 5px;
+        }
+
         .p_name, .p_type, .p_price {
           display: inline-block;
           width: 100%;
@@ -326,6 +466,11 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
         .p_name, .p_price {
           padding: 15px 0;
+
+          @include range-width(0, 1065px) {
+            padding: 10px 0;
+          }
+
         }
 
         .p_name {
@@ -340,6 +485,19 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             color: $orange;
           }
 
+          @include range-width(860px, 1065px) {
+            font-size: 1em;
+          }
+
+          @include range-width(800px, 860px) {
+            font-size: .9em;
+          }
+
+          @include range-width(0, 800px) {
+            font-size: 1em;
+          }
+
+
         }
 
         .p_type {
@@ -351,6 +509,14 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           
           &:hover, &:active {
             color: $orange;
+          }
+
+          @include range-width(800px, 860px) {
+            font-size: .8em;
+          }
+
+          @include range-width(0, 800px) {
+            font-size: .9em;
           }
         }
 
@@ -365,10 +531,15 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             font-size: .4em;
             margin-right: 3px;
           }
+
+          @include range-width(0, 860px) {
+            font-size: .9em;
+          }
         }
       }
     }
   }
+
 
   .arrow_boxs{
     display: inline-block;
@@ -376,6 +547,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     height: 270px;
     padding: 0 20px;
     position: relative;
+
+    @include range-width(0, 530px) {
+      display: none;
+    }
 
     .av {
       display: inline-block;

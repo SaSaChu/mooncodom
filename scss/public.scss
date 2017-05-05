@@ -48,6 +48,12 @@ html {
 }
 
 
+.icon-chevron-left:before {
+  content: "\e908";
+}
+.icon-chevron-right:before {
+  content: "\e909";
+}
 .icon-google:before {
   content: "\e900";
 }
@@ -72,7 +78,6 @@ html {
 .icon-cart:before {
   content: "\e906";
 }
-
 
 $allwidth: 1170px;
 
@@ -107,29 +112,30 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
 
 
-
-
-// News
-#newsboxs {
+// bigtitle
+.titleboxs {
   display: inline-block;
   width: 100%;
-  background-color: $bglightgrey;  
+  padding: 90px 0;
 
-  .newstitle, .newsbox {
+  @include range-width(0, 475px) {
+    padding: 20px 10px;
+  }
+
+  &.news_bg {
+    background-color: $bglightgrey; 
+  }
+
+  .bigtitle_box, .small_type, .small_title {
     display: inline-block;
-    max-width: $allwidth;
+    width: 100%;
     margin: 0 auto;
   }
 
-  .newstitle {
-    padding: 30px 0;
-    position: relative;
-
-    @include range-width(0, 475px) {
-      padding: 20px 10px;
-    }
+  .bigtitle_box {
 
     p {
+      position: relative;
       display: inline-block;
       margin: 0;
       padding: 0;
@@ -144,7 +150,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         height: 2px;
         background-color: $orange;
         position: absolute;
-        top: 47px;
+        top: 18px;
       }
 
       &:before {
@@ -160,19 +166,252 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
         &:before, &:after {
           width: 30px;
-          top: 33px;
+          top: 13px;
         }
 
         &:before {
-          left: -26px;
+          left: -44px;
         }
 
         &:after {
-          right: -26px;
+          right: -44px;
         }
       }
     }
   }
+
+  .small_title {
+    p {
+
+      position: relative;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      font-size: 1.2em;
+      font-weight: 600;
+      white-space: pre-wrap;
+
+      &:before, &:after {
+        display: inline-block;
+        content: '';
+        width: 55px;
+        height: 2px;
+        background-color: $orange;
+        position: absolute;
+        top: 13px;
+      }
+
+      &:before {
+        left: -65px;
+      }
+
+      &:after {
+        right: -65px;
+      }
+
+      @include range-width(0, 475px) {
+        font-size: 1.2em;
+
+        &:before, &:after {
+          width: 30px;
+          top: 13px;
+        }
+
+        &:before {
+          left: -44px;
+        }
+
+        &:after {
+          right: -44px;
+        }
+      }
+    }
+  }
+
+
+  .small_type {
+    display: inline-block;
+    width: 100%;
+
+    p {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      color: $deepblue;
+      font-size: 1em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .5em;
+      padding-top: 8px;
+
+      @include range-width(0, 475px) {
+        font-size: .9em;
+      }
+    }
+  }
+}
+
+
+
+
+// banner + product
+.banner {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 140px;
+
+  &.tran .box .item {
+    @include transition(left .3s);
+  }
+
+  .box {
+    display: inline-block;
+    width: $allwidth;
+    margin: 0 auto;
+    height: 410px;
+    overflow: hidden;
+    position: relative;
+
+    .item {
+      width: 300px;
+      height: 410px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-right: 30px;
+
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          left: 300px * ($i - 2);
+        }
+      }
+
+      .p_picboxs {
+        display: inline-block;
+        width: 100%;
+        height: 270px;
+        padding: 20px;
+        border: 1px solid rgba(224, 224, 224, 1.00);
+
+        a {
+          display: inline-block;
+          cursor: pointer;
+          width: 100%;
+          height: auto;
+
+          img {
+            width: 100%;
+            height: auto;
+
+            @include transition(all .3s);
+            
+            &:hover {
+              color: black;
+              opacity: 0.8;
+            }
+          }
+        }
+
+      }
+
+      .p_centboxs {
+        display: inline-block;
+        width: 100%;
+
+        .p_name, .p_type, .p_price {
+          display: inline-block;
+          width: 100%;
+        }
+
+        .p_name, .p_price {
+          padding: 15px 0;
+        }
+
+        .p_name {
+          color: $deepblue;
+          font-size: 1.2em;
+          font-weight: 600;
+          white-space: pre-wrap;
+
+          @include transition(all .3s);
+          
+          &:hover, &:active {
+            color: $orange;
+          }
+
+        }
+
+        .p_type {
+          color: $grey;
+          font-size: .9em;
+          font-weight: thin;
+
+          @include transition(all .3s);
+          
+          &:hover, &:active {
+            color: $orange;
+          }
+        }
+
+        .p_price {
+          font-size: 1em;
+          color: $deepblue;
+          font-weight: 600;
+
+          &:before {
+            display: inline-block;
+            content: '$';
+            font-size: .4em;
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  .arrow_boxs{
+    display: inline-block;
+    width: 80px;
+    height: 270px;
+    padding: 0 20px;
+    position: relative;
+
+    .av {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: 115px;
+      left: 20px;
+      border: 2px solid $deepblue;
+      cursor: pointer;
+      font-size: 1.6em;
+      padding-top: 4px; 
+
+      @include border-radius(30px);
+      @include transition(all .3s);
+      
+      &:hover, &:active {
+        border: 1px solid rgba(255, 0, 0, 0);
+        color: white;
+        background-color: $orange;
+      }
+
+    }
+  }
+  
+}
+
+
+
+
+
+// News
+#newsboxs {
+  display: inline-block;
+  width: 100%;
+  background-color: $bglightgrey;  
   
   .n_picboxs {
     display: inline-block;
@@ -338,6 +577,9 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   }
   
   .newsbox {
+    display: inline-block;
+    max-width: $allwidth;
+    margin: 0 auto;
     padding: 90px 10px 70px 10px;
 
     @include split-left(130px, '.newsleft', '.newsright');
@@ -849,28 +1091,6 @@ footer {
     }
   }  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

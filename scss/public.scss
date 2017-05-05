@@ -253,8 +253,126 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
 
 
+// Popular products
+.pop_boxs {
+  display: inline-block;
+  width: 100%;
 
-// banner + product
+  @include clearfix();
+
+  .pop_box {
+    display: inline-block;
+    width: calc(100% / 4);
+    float: left;
+    height: calc(430px - 20px);
+
+    border: 1px solid rgba(224, 224, 224, 1.00); 
+
+
+    &:nth-child(n + 1) {
+      border-left: 0;
+    }
+
+    &:nth-child(n + 5) {
+      border-top: 0;
+    }
+
+    .pop_detail {
+      display: inline-block;
+      width: 100%;
+      padding: 20px;
+      position: relative;
+
+      .pop_cover {
+        cursor: pointer;
+        display: inline-block;
+        width: 100%;
+        height: 408px;
+        position: absolute;
+        z-index: 4;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 74, 4, 0);
+        padding: 25px;
+
+        @include transition(all .3s);
+        @include clearfix();
+        
+
+        .test {
+          display: none;
+          width: 50%;
+          float: right;
+          padding: 10px;
+          color: $deepblue;
+          text-align: right;
+          font-size: 1.6em;
+          font-weight: 600;
+
+          @include transition(all .3s);
+
+          &:before {
+            display: inline-block;
+            content: '$';
+            font-size: .4em;
+            margin-right: 3px;
+          }
+        }
+
+        &:hover {
+          background-color: rgba(255, 74, 4, .5);
+
+          .test {
+            display: inline-block;
+          }
+        }
+      }
+
+      .pop_pic {
+        display: inline-block;
+        width: 100%;
+        height: 280px;
+
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .pop_type {
+        display: inline-block;
+        width: 100%;
+        padding-top: 20px; 
+
+        .pop_name, .pop_cent {
+          display: inline-block;
+          width: 100%;
+        }
+
+        .pop_name {
+          font-size: 1.2em;
+          color: $deepblue;
+          font-weight: 600;
+          white-space: pre-wrap;
+        }
+
+        .pop_cent {
+          padding: 10px 0;
+          font-size: 1em;
+          color: $grey;
+          font-weight: thin;
+        }
+      }
+
+    }
+
+  }
+}
+
+
+
+// banner + Featured products
 .banner {
   display: inline-block;
   width: 100%;

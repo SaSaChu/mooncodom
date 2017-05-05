@@ -444,6 +444,39 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   width: 100%;
   margin-bottom: 140px;
 
+  &.full {
+    width: 100%;
+    margin-bottom: 0;
+
+    .box {
+      width: 100%;
+      height: 800px;
+
+      .item {
+        width: 100%;
+        height: 800px;
+
+        .pic_full {
+          display: inline-block;
+          width: 100%;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        
+
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            left: calc(100% * #{$i - 2});
+          }
+        }
+      }
+    }
+  }
+
+
 
   &.tran .box .item {
     @include transition(left .3s);

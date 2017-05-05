@@ -5,7 +5,7 @@
 
 $(function () {
 
-  $(".n_picbox, .pop_pic").imgLiquid ();
+  $(".n_picbox, .pop_pic, .pic_full").imgLiquid ();
   
   $('.banner').each (function () {
 

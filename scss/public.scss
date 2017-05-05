@@ -119,7 +119,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   padding: 90px 0;
 
   @include range-width(0, 475px) {
-    padding: 20px 10px;
+    padding: 40px 10px 20px 10px;
   }
 
   &.news_bg {
@@ -268,6 +268,49 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
     border: 1px solid rgba(224, 224, 224, 1.00); 
 
+    @include range-width(840px, 1120px) {
+      width: calc(100% / 3);
+
+      &:nth-child(n + 4) {
+        border-top: 0;
+      }
+
+      &:nth-child(7), &:nth-child(8) {
+        display: none;
+      }
+    }
+
+    @include range-width(0, 840px) {
+      width: calc(100% / 2);
+
+      &:nth-child(n + 4) {
+        border-top: 0;
+      }
+
+      &:nth-child(7), &:nth-child(8) {
+        display: none;
+      }
+    }
+
+    @include range-width(420px, 560px) {
+      height: 350px;
+    }
+
+    @include range-width(0, 420px) {
+      width: 100%;
+      height: 350px;
+
+      &:nth-child(1) {
+        border-right: 0;
+      }
+
+      &:nth-child(n + 2) {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;  
+      }
+    }
+
 
     &:nth-child(n + 1) {
       border-left: 0;
@@ -297,6 +340,15 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
         @include transition(all .3s);
         @include clearfix();
+
+        @include range-width(420px, 560px) {
+          height: 350px;
+        }
+
+        @include range-width(0, 420px) {
+          width: 100%;
+          height: 350px;
+        }
         
 
         .test {
@@ -333,11 +385,17 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         width: 100%;
         height: 280px;
 
-
         img {
           width: 100%;
           height: auto;
         }
+
+        @include range-width(0, 560px) {
+          height: 230px;
+        }
+
+
+
       }
 
       .pop_type {
@@ -355,6 +413,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           color: $deepblue;
           font-weight: 600;
           white-space: pre-wrap;
+
+          @include range-width(0, 560px) {
+            font-size: 1em;
+          }
         }
 
         .pop_cent {
@@ -362,6 +424,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           font-size: 1em;
           color: $grey;
           font-weight: thin;
+
+          @include range-width(0, 560px) {
+            font-size: .9em;
+          }
         }
       }
 

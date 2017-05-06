@@ -39,11 +39,50 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 .pro_cent_boxs {
   display: inline-block;
   width: 100%;
-  padding: 60px 0;
+  padding:35px 0 60px 0;
 
   .pro_cent_box {
     display: inline-block;
     width: $allwidth;
+
+    .tag_boxs {
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 35px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid rgba(220, 219, 220, 1.00);
+
+      .link {
+        display: inline-block;
+        color: $grey;
+
+        &:after {
+          display: inline-block;
+          content: '>';
+          margin-left:5px;
+        }
+
+        &:last-child {
+
+          &:after {
+            display: none;
+          }
+        }
+
+        a {
+          cursor: pointer;
+          display: inline-block;
+          font-size: .9em;
+          color: $grey;
+          @include transition(all .3s);
+          
+          &:hover, &:active, &.ac {
+            color: $orange;
+          }
+        }        
+      }
+    }
 
     @include split-left(300px, '.pro_left', '.pro_right');
 

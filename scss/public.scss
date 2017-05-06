@@ -91,23 +91,30 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 // Top Header
 #top {
   display: inline-block;
-  max-width: $allwidth;
-  height: 140px;
-  margin: 0 auto;
-  border: 1px solid rgba(255, 0, 0, .3);
+  width: 100%;
+  padding: 50px 0;
 
-  @include split-left(215px ,'.toplogo', '.topnav');
+  .nav_boxs {
+    display: inline-block;
+    margin: 0 auto;
+    width: $allwidth;
 
-  .toplogo {
-    img {
-      width: 100%;
-      height: auto;
+    @include split-left(215px, '.nav_logo', '.nav_box');
+
+    .nav_logo {
+      float: left;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
-  }
 
-  .topnav {
-    color: white;
-  }
+    .nav_box {
+      float: left;
+    }
+  } 
+
 }
 
 
@@ -448,13 +455,27 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     width: 100%;
     margin-bottom: 0;
 
+    @include range-width(0, 660px) {
+      padding: 0 ;
+      margin-top: 0;
+    }
+
     .box {
       width: 100%;
       height: 800px;
 
+      @include range-width(0, 690px) {
+        height: 500px;
+      }
+
       .item {
         width: 100%;
         height: 800px;
+
+        @include range-width(0, 690px) {
+          height: 500px;
+        }
+
 
         .pic_full {
           display: inline-block;
@@ -474,9 +495,70 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         }
       }
     }
+
+    position: relative;
+
+    .av {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      font-size: 5em;
+      color: rgba(255, 255, 255, .3);
+      @include transition(all .3s);
+      
+      @include range-width(0, 690px) {
+        font-size: 4em;
+        top: 45%;
+      }
+
+      &.right {
+        left: auto;
+        right: 0;
+      }
+
+      &:hover, &:active {
+        color: rgba(255, 74, 4, 1.00);
+      }
+    }
   }
 
+  &.product {
 
+    @include range-width(325px, 530px) {
+      position: relative;
+      
+      .arrow_boxs {
+        position: absolute;
+        z-index: 5;
+        left: -8px;
+        top: 15px;
+
+        &:last-child {
+          left: auto;
+          right: -5px;
+        }
+      }
+    }
+
+    @include range-width(0, 325px) {
+      position: relative;
+      
+      .arrow_boxs {
+        position: absolute;
+        z-index: 5;
+        left: -15px;
+        top: 15px;
+
+        &:last-child {
+          left: auto;
+          right: -20px;
+        }
+      }
+    }
+  }
 
   &.tran .box .item {
     @include transition(left .3s);
@@ -765,9 +847,9 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     padding: 0 20px;
     position: relative;
 
-    @include range-width(0, 530px) {
-      display: none;
-    }
+    // @include range-width(0, 530px) {
+    //   display: none;
+    // }
 
     .av {
       display: inline-block;
@@ -780,6 +862,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       cursor: pointer;
       font-size: 1.6em;
       padding-top: 4px; 
+      background-color: white;
 
       @include border-radius(30px);
       @include transition(all .3s);

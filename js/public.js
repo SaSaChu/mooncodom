@@ -5,7 +5,11 @@
 
 $(function () {
 
-  $(".n_picbox, .pop_pic, .pic_full").imgLiquid ();
+  $(".n_picbox, .pic_full").imgLiquid ();
+  
+  $('.pop_pic').imgLiquid ({
+    fill: false
+  });
   
   $('.banner').each (function () {
 

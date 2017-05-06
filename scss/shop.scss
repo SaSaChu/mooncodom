@@ -5,48 +5,6 @@
 
 @import "_oa";
 
-@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
-@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  @include font-smoothing(antialiased);
-}
-
-* {
-  &, &:after, &:before {
-    vertical-align: top;
-    @include box-sizing(border-box);
-    @include selection(rgba(150, 200, 255, 1), rgba(255, 255, 255, 1));
-    @include font-smoothing(antialiased);
-  }
-}
-
-html {
-  height: 100%;
-
-  body {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    font-size: medium;
-    font-family: "Roboto", "微軟正黑體", Monaco, "Microsoft JhengHei" ;
-    background-color: white;
-    color: rgba(40, 51, 66, 1.00);
-
-    @include font-smoothing(antialiased);
-  }
-}
-
 
 $allwidth: 1170px;
 
@@ -157,11 +115,29 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             display: inline-block;
             width: 100%;
             height: 265px;
-          border: 1px solid rgba(224, 224, 224, 1.00);
+            border: 1px solid rgba(224, 224, 224, 1.00);
 
             img {
               width: 100%;
             }
+          }
+
+          .p_explain_boxs {}
+
+          button {
+            padding: 5px 15px;
+            font-size: 1em;
+            border: 1px solid $deepblue;
+            background-color: white;
+            @include border-radius(20px);
+           
+            &:before {
+              display: inline-block;
+              content: '\e907';
+              font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+              margin-right: 10px;
+              margin-top: 3px;
+            } 
           }
 
         }

@@ -39,7 +39,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 .pro_cent_boxs {
   display: inline-block;
   width: 100%;
-  padding-top: 60px;
+  padding: 60px 0;
 
   .pro_cent_box {
     display: inline-block;
@@ -108,36 +108,160 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           }
 
           &:nth-child(n + 4) {
-            margin-top: 30px;
+            margin-top: 50px;
           }
 
           .p_pic {
+            cursor: pointer;
             display: inline-block;
             width: 100%;
             height: 265px;
             border: 1px solid rgba(224, 224, 224, 1.00);
+            position: relative;
+            @include transition(all .3s);
 
             img {
               width: 100%;
             }
+
+            &:hover, &:active {
+              opacity: .8;
+            }
+
+            .offer {
+              position: absolute;
+              top: 0;
+              right: 0;
+              display: inline-block;
+              width: 55px;
+              height: 55px;
+              float: right;
+              background-color: rgba(255, 217, 40, 1.00);
+              padding: 10px;
+
+              .offer_number, .off {
+                display: inline-block;
+                font-size: 1em;
+                width: 100%;
+              }
+              
+              .offer_number {
+                display: inline-block;
+                width: 100%;
+                font-weight: 600;
+
+                &:after {
+                  display: inline-block;
+                  content: '%';
+                  font-size: .4em;
+                  margin-right: 3px;
+                }
+              }
+
+              .off {
+                font-weight: 400;
+
+                &.aa {
+                  font-size: .9em !important;
+                  font-weight: 600;
+                }
+              }
+            }
           }
 
-          .p_explain_boxs {}
+          .p_explain_boxs {
+            display: inline-block;
+            width: 100%;
+            padding: 25px 0; 
+
+
+            .name, .detial, .price_boxs {
+              display: inline-block;
+              width: 100%;
+            }
+
+            .name, .detial {
+              white-space: pre-wrap;
+            }
+
+            .name {
+              cursor: pointer;
+              font-size: 1.2em;
+              color: $deepblue;
+              font-weight: 600;
+              @include transition(all .3s);
+              
+              &:hover, &:active {
+                color: $orange;
+              }
+            }
+
+            .detial {
+              float: left;
+              font-size: 1em;
+              height: 45px;
+              font-weight: 400;
+              color: $grey;
+              margin: 10px 0;
+            }
+
+            .price_boxs {
+              display: inline-block;
+              width: 100%;
+              margin-top: 10px;
+
+              .price, .grey_price {
+                display: inline-block !important;
+                padding: 0;
+                margin: 0;
+                font-size: 1.2em;
+                font-weight: 600;
+                margin: 0 8px;
+
+                &:before {
+                  display: inline-block;
+                  content: '$';
+                  font-size: .4em;
+                  margin-right: 3px;
+                }
+                
+              }
+
+              .price {
+                color: $deepblue;
+              }
+
+              .grey_price {
+                color: rgba(124, 124, 124, 1.00);
+                text-decoration: line-through;
+              }
+            }
+
+          }
 
           button {
+            cursor: pointer;
             padding: 5px 15px;
-            font-size: 1em;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: $deepblue;
             border: 1px solid $deepblue;
             background-color: white;
             @include border-radius(20px);
-           
+            @include transition(all .3s);
+                      
             &:before {
               display: inline-block;
               content: '\e907';
               font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
               margin-right: 10px;
-              margin-top: 3px;
+              margin-top: 5px;
             } 
+
+            &:hover, &:active {
+              border: 1px solid $orange;
+              color: $orange;
+            }
           }
 
         }

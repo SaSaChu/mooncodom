@@ -110,12 +110,20 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   .nav_boxs {
     display: inline-block;
     margin: 0 auto;
-    width: $allwidth;
+    max-width: $allwidth;
 
     @include split-left(215px, '.nav_logo', '.nav_box');
 
+    @include range-width(0, 925px) {
+      padding: 0 10px;
+    }
+
     .nav_logo {
       float: left;
+
+      @include range-width(0, 925px) {
+        width: 180px;
+      }
 
       img {
         width: 100%;

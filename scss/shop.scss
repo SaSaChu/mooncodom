@@ -94,7 +94,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     }
 
     .pro_right {
-
+      
       .pr_one, .pr_two, .pr_three {
         display: inline-block;
         width: 100%;
@@ -136,13 +136,13 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       }
 
       .pr_two {
+
         @include clearfix();
         
         .product_boxs {
           display: inline-block;
           // width: calc(100% / 3);
           width: calc(100% / 3 - 25px * 2 / 3);
-          height: 200px;
           float: left;
 
           &:nth-child(3n + 2) {
@@ -157,6 +157,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             display: inline-block;
             width: 100%;
             height: 265px;
+          border: 1px solid rgba(224, 224, 224, 1.00);
 
             img {
               width: 100%;

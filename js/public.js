@@ -6,7 +6,7 @@
 $(function () {
 
   $(".n_picbox, .pic_full").imgLiquid ();
-  
+
   $('.pop_pic').imgLiquid ({
     fill: false
   });
@@ -41,6 +41,17 @@ $(function () {
       $(this).addClass ('tran');
     }.bind ($(this)), 300);
 
+  });
+
+
+  var menu_top = $('#menu').offset ().top;
+  $(window).scroll (function () {
+    
+    if ($(window).scrollTop () > menu_top) {
+      $('#menu').addClass ('fix');
+    } else {
+      $('#menu').removeClass ('fix');
+    }
   });
 
 });

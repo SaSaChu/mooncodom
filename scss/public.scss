@@ -89,10 +89,23 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
 
 // Top Header
-#top {
+#menu {
   display: inline-block;
   width: 100%;
   padding: 50px 0;
+  background-color: white;
+  @include box-shadow(0 3px 3px rgba(220, 219, 220, .5));
+
+  &.fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+
+    + * {
+      margin-top: 45px;
+    }
+  }
 
   .nav_boxs {
     display: inline-block;
@@ -111,7 +124,27 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     }
 
     .nav_box {
+      display: inline-block;
       float: left;
+      padding: 13px 0;
+      border: 1px solid rgba(255, 0, 0, .3);
+
+      .nav {
+        display: inline-block;
+        cursor: pointer;
+        color: $deepblue;
+        font-size: 1em;
+        font-weight: 600;
+        padding: 0 30px;
+        @include transition(all .3s);
+        
+        &:hover {
+          display: inline-block;
+          height: 10px;
+          background-color: rgba(251, 223, 24, 1.00);
+        }
+
+      }
     }
   } 
 
@@ -1213,6 +1246,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   display: inline-block;
   width: 100%;
   padding: 80px 0;
+
+  border-top: 1px solid rgba(220, 219, 220, 1.00);
 
   @include range-width(325px, 690px) {
     padding: 60px 0;

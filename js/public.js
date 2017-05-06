@@ -5,9 +5,9 @@
 
 $(function () {
 
-  $(".n_picbox, .pic_full").imgLiquid ();
+  $(".n_picbox, .pic_full, .cent_banner").imgLiquid ();
 
-  $('.pop_pic').imgLiquid ({
+  $('.pop_pic, .p_pic').imgLiquid ({
     fill: false
   });
   

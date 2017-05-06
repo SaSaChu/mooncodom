@@ -4,7 +4,7 @@
  */
 
 $(function () {
-  $('body').append ($('<div />').attr ('id', 'menu_mobile').append ($('<label />').addClass ('icon-twitter').attr ('for', 'menu_ckeckbox')).append (
+  $('body').append ($('<div />').attr ('id', 'menu_mobile').append ($('<label />').addClass ('icon-cross').attr ('for', 'menu_ckeckbox')).append (
     $('#menu .nav_box a').map (function () {
       return $('<div />').append ($(this).clone ());
     }).toArray ())).append ($('<label />').attr ('for', 'menu_ckeckbox'));

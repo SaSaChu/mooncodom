@@ -14,6 +14,16 @@ $(function () {
   $('.pop_pic, .p_pic').imgLiquid ({
     fill: false
   });
+
+  $('.group>div').each (function () {
+    $(this).addClass ('n' + $(this).find ('>a').length);
+  });
+  $('.group>span').click (function () {
+    $(this).toggleClass ('show');
+  });
+  setTimeout (function () {
+    $('.group>div').addClass ('ani');
+  }, 500);
   
   $('.banner').each (function () {
 

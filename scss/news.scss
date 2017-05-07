@@ -1,0 +1,147 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+$allwidth: 1170px;
+#header {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(223, 121, 39, 1.00);
+
+  span {
+    position: absolute;
+    top: calc(50% - 30px - 20px / 2);
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    color: white;
+    text-align: center;
+    &:first-child {
+      font-weight: bold;
+      font-size: 20px; 
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: calc(50% - 50px / 2);
+        display: inline-block;
+        width: 50px;
+        height: 3px;
+        background-color: white;
+      }
+    }
+    &:last-child {
+      font-size: 14px;
+      top: calc(50% + 20px);
+      text-transform: uppercase;
+    }
+  }
+}
+
+#article {
+  display: inline-block;
+  width: 100%;
+  
+  .cover {
+    display: inline-block;
+    width: 100%;
+    margin-top: 60px;
+    @include range-width(0,400px){
+      margin-top: 0;
+    }
+    @include range-width(400px,750px){
+      margin-top: 30px;
+    };
+    img {
+      display: inline-block;
+      max-width: $allwidth;
+      width: 100%;
+    }
+  }
+  .prev_next {
+    position: relative;
+    display: inline-block;
+    height: 100px;
+    width: 100%;
+    > a {
+      position: absolute;
+      top: calc(50% - 35px / 2);
+      left: 50px;
+
+      
+      display: inline-block;
+      height: 35px;
+      line-height: 35px;
+      text-decoration: none;
+      color: rgba(69, 69, 69, 1.00);
+
+      @include range-width(0,500px){
+        left: 20px;
+      }
+      @include range-width(500px,600px){
+        left: 30px;
+      }
+      @include range-width($allwidth){
+        left: calc(50% - #{$allwidth} / 2 + 50px);
+      }
+
+
+      i {
+        display: inline-block;
+        line-height: 35px;
+      }
+      &.next {
+        right: 50px;
+        @include range-width(0,500px){
+          right: 20px;
+        }
+        @include range-width(500px,600px){
+          right: 30px;
+        }
+        @include range-width($allwidth){
+          right: calc(50% - #{$allwidth} / 2 + 50px);
+        }
+
+
+        left: auto;
+      }
+    }
+
+  }
+  > section {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $allwidth;
+    padding: 0 50px;
+    @include range-width(0,500px){
+      padding: 0 20px;
+    }
+    @include range-width(500px,600px){
+      padding: 0 30px;
+    }
+    text-align: left;
+    h1, h2 {
+      margin: 30px 0;
+      color: rgba(48, 56, 81, 1.00);
+    }
+    p {
+      color: rgba(116, 116, 116, 1.00);
+      font-size: 14px;
+      + h1, + h2 {
+        margin-top: 50px
+      }
+    }
+    img {
+      margin-top: 30px;
+      margin-bottom: 30px
+    }
+  }
+}

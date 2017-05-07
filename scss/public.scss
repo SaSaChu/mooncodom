@@ -114,7 +114,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     z-index: 6;
 
     + * {
-      margin-top: 45px;
+      margin-top: 150px;
+      @include range-width(0, 820px) {
+        margin-top: 110px;
+      }
     }
   }
 

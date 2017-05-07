@@ -145,3 +145,107 @@ $allwidth: 1170px;
     }
   }
 }
+
+.newss {
+  display: inline-block;
+  width: 100%;
+  margin-top: 85px;
+  @include range-width(0, 400px){
+    margin-top: 0;
+  }
+  @include range-width(400px, 600px){
+    margin-top: 55px;
+  }
+  > div {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $allwidth;
+    
+    @include clearfix();
+    
+    .news {
+      float: left;
+      display: inline-block;
+      text-align: left;
+      @include range-width(0, 600px){
+        width: 100%;
+        + .news {
+          margin-top: 50px;
+        }
+      }
+      @include range-width(600px, 850px){
+        width: calc(50% - 30px / 2);
+
+        &:nth-child(2n + 2) {
+          margin-left: 30px;
+        }
+        &:nth-child(n + 3) {
+          margin-top: 30px;
+        }
+      }
+      @include range-width(850px){
+
+        width: calc(50% - 50px / 2);
+
+        &:nth-child(2n + 2) {
+          margin-left: 50px;
+        }
+        &:nth-child(n + 3) {
+          margin-top: 50px;
+        }
+      }
+      .img {
+        display: inline-block;
+        width: 100%;
+        height: 300px;
+        @include range-width(0, 700px){
+          height: 200px;
+        };
+        @include range-width(700px, 850px){
+          height: 250px;
+        };
+      }
+      a {
+        cursor: pointer;
+        color: rgba(220, 93, 59, 1.00);
+        text-decoration: none;
+      }
+      div {
+        text-decoration: none;
+        font-size: 22px;
+        display: inline-block;
+        width: 100%;
+        margin-top: 30px;
+        @include range-width(0, 600px){
+          padding: 0 8px;
+        }
+        @include overflow-docx3();
+      }
+      p {
+        display: inline-block;
+        width: 100%;
+        margin-top: 40px;
+        color: rgba(154, 154, 154, 1.00);
+        font-size: 16px;
+        line-height: 22px;
+        height: 22px * 4;
+        overflow: hidden;
+        word-break: break-all;
+        @include range-width(0, 600px){
+          padding: 0 8px;
+        }
+      }
+      span {
+        display: inline-block;
+        width: 100%;
+        font-size: 14px;
+        color: rgba(154, 154, 154, 1.00);
+
+        @include range-width(0, 600px){
+          padding: 0 8px;
+        }
+      }
+    }
+  }
+}

@@ -25,6 +25,13 @@ $(function () {
     $('.group>div').addClass ('ani');
   }, 500);
   
+  $('.cate_title.mobile').click (function () {
+    $(this).toggleClass ('show');
+  });
+  if ($('.ad_boxs').length && $('#aboutboxs').length) {
+    $('.ad_boxs').clone (true).attr ('class', 'ad_boxs2').insertBefore ($('#aboutboxs'));
+  }
+
   $('.banner').each (function () {
 
     $(this).find ('.left').click (function() {

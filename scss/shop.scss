@@ -40,6 +40,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   width: 100%;
   padding:35px 0 60px 0;
 
+  @include range-width(0, 800px) {
+    padding:35px 0 30px 0;
+  }
+
   .pro_cent_box {
     display: inline-block;
     max-width: $allwidth;
@@ -54,6 +58,9 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       text-align: left;
       margin-bottom: 35px;
       padding-bottom: 35px;
+      @include range-width(0, 800px) {
+        margin-bottom: 25px;
+      }
       border-bottom: 1px solid rgba(220, 219, 220, 1.00);
 
       .link {
@@ -95,11 +102,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
 
     .pro_left {
-      @include range-width(0, 800px) {
-        display: none;
-      }
-
       padding-right: 30px;
+
+      
+
 
       .category_boxs, .ad_boxs {
         display: inline-block;
@@ -191,6 +197,54 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           &:hover, &:active {
             opacity: .8;
           }
+        }
+      }
+      @include range-width(0, 800px) {
+        // display: none;
+        width: 100%;
+        padding-right: 0;
+        .category_boxs {
+          padding-bottom: 35px; 
+          
+          .cate_title {
+            position: relative;
+            border-bottom: 1px solid rgba(220, 219, 220, 1.00);
+            padding-bottom: 25px;
+
+            &:after {
+              position: absolute;
+              right: 0;
+              top: 0;
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              line-height: 25px;
+              content: '\e90a';
+              font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+              text-align: center;
+              @include opacity(.75);
+              @include rotate(90deg);
+              @include transition(transform .3s);
+            }
+            &.show {
+              &:after {
+                @include rotate(90deg  + 180deg);
+              }
+              ~ .group {
+                display: inline-block;
+              }
+            }
+          }
+          .group {
+            display: none;
+          }
+          &:not(:first-child) {
+            display: none;
+          }
+        }
+        
+        .ad_boxs {
+          display: none;
         }
       }
     }
@@ -529,7 +583,9 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       .pr_three {
         padding: 90px 0 30px 0;
         @include clearfix();
-
+        @include range-width(0, 800px) {
+          padding: 60px 0 30px 0;
+        }
         p {
           display: inline-block;
           float: right;
@@ -655,5 +711,36 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       border-bottom: 1px dashed rgba(240, 240, 240, 1.00);
     }
 
+  }
+}
+.ad_boxs2 {
+  @include range-width(800px) {
+    display: none;
+  };
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 35px + 10px;
+  @include clearfix();
+  
+  .ad_pic {
+    float: left;
+    display: inline-block;
+    width: calc(50% - 10px / 2);
+    @include range-width(0, 450px) {
+      height: 180px;
+    }
+    @include range-width(450px, 600px) {
+      height: 250px;
+    }
+    @include range-width(600px, 800px) {
+      height: 380px;
+    }
+    &:nth-child(2n + 2) {
+      margin-left: 10px;
+    }
+    &:nth-child(n + 3) {
+      display: none;
+    }
   }
 }

@@ -14,7 +14,24 @@ $(function () {
   $('.pop_pic, .p_pic').imgLiquid ({
     fill: false
   });
+
+  $('.group>div').each (function () {
+    $(this).addClass ('n' + $(this).find ('>a').length);
+  });
+  $('.group>span').click (function () {
+    $(this).toggleClass ('show');
+  });
+  setTimeout (function () {
+    $('.group>div').addClass ('ani');
+  }, 500);
   
+  $('.cate_title.mobile').click (function () {
+    $(this).toggleClass ('show');
+  });
+  if ($('.ad_boxs').length && $('#aboutboxs').length) {
+    $('.ad_boxs').clone (true).attr ('class', 'ad_boxs2').insertBefore ($('#aboutboxs'));
+  }
+
   $('.banner').each (function () {
 
     $(this).find ('.left').click (function() {

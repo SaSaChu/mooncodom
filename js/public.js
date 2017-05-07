@@ -9,7 +9,7 @@ $(function () {
       return $('<div />').append ($(this).clone ());
     }).toArray ())).append ($('<label />').attr ('for', 'menu_ckeckbox'));
 
-  $(".n_picbox, .pic_full, .cent_banner, .ad_pic").imgLiquid ();
+  $(".n_picbox, .pic_full, .cent_banner, .ad_pic, .newss .img, .car_banner, table .img").imgLiquid ();
 
   $('.pop_pic, .p_pic').imgLiquid ({
     fill: false

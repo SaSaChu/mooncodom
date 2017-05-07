@@ -1,0 +1,241 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+$allwidth: 1170px;
+
+.car_banner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  @include range-width(0, 400px) {
+    height: 300px;
+  }
+  @include range-width(400px, 550px) {
+    height: 400px;
+  }
+  @include range-width(550px) {
+    height: 500px;
+  };
+
+  .content {
+    position: absolute;
+    left: calc(50% - 500px / 2);
+    top: calc(50% - 150px / 2);
+    display: inline-block;
+    width: 500px;
+    height: 150px;
+    // border: 1px solid rgba(255, 0, 0, .3);
+    @include range-width(0, 550px) {
+      width: 100%;
+      left: 0;
+    }
+    > span {
+      display: inline-block;
+      width: 100%;
+      color: rgba(227, 90, 46, 1.00);
+      font-size: 30px;
+      text-transform: uppercase;
+      @include range-width(0, 400px) {
+        font-size: 25px;
+      }
+    }
+    > p {
+      display: inline-block;
+      width: 100%;
+      color: rgba(216, 216, 216, 1.00);
+      font-size: 16px;
+      // @include text-shadow(0 0 1px rgba(39, 40, 34, .200));
+    }
+    > a {
+      display: inline-block !important;
+      width: auto !important;
+      height: 30px !important;
+      line-height: 30px;
+      padding: 0 16px;
+      background-color: rgba(45, 58, 75, 1.00);
+      @include border-radius(30px / 2);
+      text-transform: uppercase;
+      color: rgba(228, 236, 248, 1.00);
+      text-decoration: none;
+      font-size: 13px;
+      
+      i {
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+h1 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 40px;
+
+  > div {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $allwidth;
+    text-align: left;
+    color: rgba(221, 80, 49, 1.00);
+    font-size: 22px;
+    @include range-width(0, $allwidth) {
+      padding: 0 10px;
+    };
+  }
+}
+
+table {
+  display: table;
+  width: 100%;
+  margin: 0 auto;
+  max-width: $allwidth;
+
+  @include range-width(0, 500px) {
+    width: 100%;
+  }
+  @include range-width(500px, $allwidth) {
+    width: calc(100% - 10px * 2);
+    margin: 0 10px;
+  };
+
+  border-spacing: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  thead {
+    tr {
+      th {
+        color: rgba(145, 146, 149, 1.00);
+        font-size: 16px;
+        border-bottom: 1px solid rgba(229, 228, 230, 1.00);
+        padding: 16px 0;
+        &:nth-child(1) {
+          width: 35%;
+          @include range-width(700px){
+            width: 45%;
+            text-align: left;
+          }
+        }
+        &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+          width: 20%;
+          @include range-width(700px){
+            width: 15%;
+          }
+        }
+        &:nth-child(5) {
+          width: 15%;
+          @include range-width(700px){
+            width: 10%;
+          }
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        padding: 16px 0;
+        vertical-align: middle;
+        @include range-width(0, 500px){
+          padding: 16px 6px;
+          font-size: 13px;
+        }
+        // border: 1px solid rgba(255, 0, 0, .3);
+        sup {
+          font-size: 10px;
+          vertical-align: top;
+          position: relative;
+          top: -2px;
+          @include range-width(0, 500px){
+            display: none;
+          }
+        }
+        a {
+          color: rgba(142, 143, 144, 1.00);
+          font-size: 14px;
+          text-decoration: none;
+          cursor: pointer;
+          @include transition(color .3s);
+          
+          &:hover {
+            color: rgba(100, 100, 100, 1.00);
+          }
+        }
+        select {
+          // @include range-width(0, 500px) {
+          //   width: 100%;
+          // }
+        }
+        &:nth-child(1) {
+          @include clearfix();
+          > * {
+            @include range-width(700px){
+              float: left;
+            }
+            display: inline-block;
+          }
+          .img {
+            width: 135px;
+            height: 135px;
+            @include range-width(0, 500px){
+              width: 75px;
+              height: 75px;
+              display: none;
+            }
+            @include range-width(500px, 700px){
+              width: 100px;
+              height: 100px;
+            }
+            overflow: hidden;
+            // border: 1px solid rgba(255, 0, 0, .3);
+
+            img {
+              width: 100%;
+            }
+          }
+          div:nth-child(2) {
+            display: inline-block;
+            width: calc(100% - 135px);
+            padding-top: 45px;
+            height: 135px;
+            text-align: left;
+            padding-left: 32px;
+
+            @include range-width(0, 700px){
+              width: 100%;
+              height: auto;
+              padding-left: 0;
+              padding-top: 4px;
+              text-align: center;
+            }
+            // border: 1px solid rgba(255, 0, 0, .3);
+            b {
+              display: inline-block;
+              width: 100%;
+              color: rgba(41, 49, 63, 1.00);
+              text-transform: uppercase;
+              font-size: 18px;
+              @include range-width(0, 500px){
+                font-size: 14px;
+              }
+            }
+            > * {
+              @include overflow-docx3();
+            }
+            span {
+              display: inline-block;
+              width: 100%;
+              margin-top: 4px;
+              color: rgba(154, 154, 154, 1.00);
+            }
+          }
+        }
+      }
+    }
+  }
+}

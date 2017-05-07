@@ -1,0 +1,251 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+$allwidth: 1170px;
+#header {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(223, 121, 39, 1.00);
+
+  span {
+    position: absolute;
+    top: calc(50% - 30px - 20px / 2);
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    color: white;
+    text-align: center;
+    &:first-child {
+      font-weight: bold;
+      font-size: 20px; 
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: calc(50% - 50px / 2);
+        display: inline-block;
+        width: 50px;
+        height: 3px;
+        background-color: white;
+      }
+    }
+    &:last-child {
+      font-size: 14px;
+      top: calc(50% + 20px);
+      text-transform: uppercase;
+    }
+  }
+}
+
+#article {
+  display: inline-block;
+  width: 100%;
+  
+  .cover {
+    display: inline-block;
+    width: 100%;
+    margin-top: 60px;
+    @include range-width(0,400px){
+      margin-top: 0;
+    }
+    @include range-width(400px,750px){
+      margin-top: 30px;
+    };
+    img {
+      display: inline-block;
+      max-width: $allwidth;
+      width: 100%;
+    }
+  }
+  .prev_next {
+    position: relative;
+    display: inline-block;
+    height: 100px;
+    width: 100%;
+    > a {
+      position: absolute;
+      top: calc(50% - 35px / 2);
+      left: 50px;
+
+      
+      display: inline-block;
+      height: 35px;
+      line-height: 35px;
+      text-decoration: none;
+      color: rgba(69, 69, 69, 1.00);
+
+      @include range-width(0,500px){
+        left: 20px;
+      }
+      @include range-width(500px,600px){
+        left: 30px;
+      }
+      @include range-width($allwidth){
+        left: calc(50% - #{$allwidth} / 2 + 50px);
+      }
+
+
+      i {
+        display: inline-block;
+        line-height: 35px;
+      }
+      &.next {
+        right: 50px;
+        @include range-width(0,500px){
+          right: 20px;
+        }
+        @include range-width(500px,600px){
+          right: 30px;
+        }
+        @include range-width($allwidth){
+          right: calc(50% - #{$allwidth} / 2 + 50px);
+        }
+
+
+        left: auto;
+      }
+    }
+
+  }
+  > section {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $allwidth;
+    padding: 0 50px;
+    @include range-width(0,500px){
+      padding: 0 20px;
+    }
+    @include range-width(500px,600px){
+      padding: 0 30px;
+    }
+    text-align: left;
+    h1, h2 {
+      margin: 30px 0;
+      color: rgba(48, 56, 81, 1.00);
+    }
+    p {
+      color: rgba(116, 116, 116, 1.00);
+      font-size: 14px;
+      + h1, + h2 {
+        margin-top: 50px
+      }
+    }
+    img {
+      margin-top: 30px;
+      margin-bottom: 30px
+    }
+  }
+}
+
+.newss {
+  display: inline-block;
+  width: 100%;
+  margin-top: 85px;
+  @include range-width(0, 400px){
+    margin-top: 0;
+  }
+  @include range-width(400px, 600px){
+    margin-top: 55px;
+  }
+  > div {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $allwidth;
+    
+    @include clearfix();
+    
+    .news {
+      float: left;
+      display: inline-block;
+      text-align: left;
+      @include range-width(0, 600px){
+        width: 100%;
+        + .news {
+          margin-top: 50px;
+        }
+      }
+      @include range-width(600px, 850px){
+        width: calc(50% - 30px / 2);
+
+        &:nth-child(2n + 2) {
+          margin-left: 30px;
+        }
+        &:nth-child(n + 3) {
+          margin-top: 30px;
+        }
+      }
+      @include range-width(850px){
+
+        width: calc(50% - 50px / 2);
+
+        &:nth-child(2n + 2) {
+          margin-left: 50px;
+        }
+        &:nth-child(n + 3) {
+          margin-top: 50px;
+        }
+      }
+      .img {
+        display: inline-block;
+        width: 100%;
+        height: 300px;
+        @include range-width(0, 700px){
+          height: 200px;
+        };
+        @include range-width(700px, 850px){
+          height: 250px;
+        };
+      }
+      a {
+        cursor: pointer;
+        color: rgba(220, 93, 59, 1.00);
+        text-decoration: none;
+      }
+      div {
+        text-decoration: none;
+        font-size: 22px;
+        display: inline-block;
+        width: 100%;
+        margin-top: 30px;
+        @include range-width(0, 600px){
+          padding: 0 8px;
+        }
+        @include overflow-docx3();
+      }
+      p {
+        display: inline-block;
+        width: 100%;
+        margin-top: 40px;
+        color: rgba(154, 154, 154, 1.00);
+        font-size: 16px;
+        line-height: 22px;
+        height: 22px * 4;
+        overflow: hidden;
+        word-break: break-all;
+        @include range-width(0, 600px){
+          padding: 0 8px;
+        }
+      }
+      span {
+        display: inline-block;
+        width: 100%;
+        font-size: 14px;
+        color: rgba(154, 154, 154, 1.00);
+
+        @include range-width(0, 600px){
+          padding: 0 8px;
+        }
+      }
+    }
+  }
+}

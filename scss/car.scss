@@ -7,6 +7,13 @@
 
 $allwidth: 1170px;
 
+$orange: rgba(255, 74, 4, 1.00);
+$deepblue: rgba(23, 28, 35, 1.00);
+$grey: rgba(102, 102, 102, 1.00);
+
+$bglightgrey: rgba(248, 248, 248, 1.00);
+
+
 .car_banner {
   position: relative;
   display: inline-block;
@@ -94,6 +101,7 @@ table {
   width: 100%;
   margin: 0 auto;
   max-width: $allwidth;
+  margin-bottom: 20px;
 
   @include range-width(0, 500px) {
     width: 100%;
@@ -114,34 +122,49 @@ table {
         font-size: 16px;
         border-bottom: 1px solid rgba(229, 228, 230, 1.00);
         padding: 16px 0;
+
         &:nth-child(1) {
           width: 35%;
-          @include range-width(700px){
+
+          @include range-width(700px) {
             width: 45%;
             text-align: left;
           }
+
         }
+
         &:nth-child(2), &:nth-child(3), &:nth-child(4) {
           width: 20%;
-          @include range-width(700px){
+
+          @include range-width(700px) {
             width: 15%;
           }
         }
+
         &:nth-child(5) {
+
           width: 15%;
-          @include range-width(700px){
+          @include range-width(700px) {
             width: 10%;
           }
         }
       }
     }
   }
+
   tbody {
     tr {
+      border-bottom: 1px solid rgba(220, 219, 220, 1.00);
+
+      &:last-child {
+        border-top: 4px double rgba(220, 219, 220, 1.00);
+        border-bottom: 4px double rgba(220, 219, 220, 1.00);
+      }
+
       td {
         padding: 16px 0;
         vertical-align: middle;
-        @include range-width(0, 500px){
+        @include range-width(0, 500px) {
           padding: 16px 6px;
           font-size: 13px;
         }
@@ -151,7 +174,7 @@ table {
           vertical-align: top;
           position: relative;
           top: -2px;
-          @include range-width(0, 500px){
+          @include range-width(0, 500px) {
             display: none;
           }
         }
@@ -163,7 +186,7 @@ table {
           @include transition(color .3s);
           
           &:hover {
-            color: rgba(100, 100, 100, 1.00);
+            color: $orange;
           }
         }
         select {
@@ -174,7 +197,7 @@ table {
         &:nth-child(1) {
           @include clearfix();
           > * {
-            @include range-width(700px){
+            @include range-width(700px) {
               float: left;
             }
             display: inline-block;
@@ -182,15 +205,19 @@ table {
           .img {
             width: 135px;
             height: 135px;
-            @include range-width(0, 500px){
+            background-color: white;
+            border: 1px solid rgba(220, 219, 220, 1.00);
+
+            @include range-width(0, 500px) {
               width: 75px;
               height: 75px;
               display: none;
             }
-            @include range-width(500px, 700px){
+            @include range-width(500px, 700px) {
               width: 100px;
               height: 100px;
             }
+            
             overflow: hidden;
             // border: 1px solid rgba(255, 0, 0, .3);
 
@@ -206,7 +233,7 @@ table {
             text-align: left;
             padding-left: 32px;
 
-            @include range-width(0, 700px){
+            @include range-width(0, 700px) {
               width: 100%;
               height: auto;
               padding-left: 0;
@@ -220,7 +247,7 @@ table {
               color: rgba(41, 49, 63, 1.00);
               text-transform: uppercase;
               font-size: 18px;
-              @include range-width(0, 500px){
+              @include range-width(0, 500px) {
                 font-size: 14px;
               }
             }
@@ -239,3 +266,44 @@ table {
     }
   }
 }
+
+.btn_boxs {
+  display: inline-block;
+  width: 100%;
+  margin: 20px 0 100px 0;
+
+  .btn_box {
+    display: inline-block;
+    max-width: $allwidth;
+    width: 100%;
+    margin: 0 auto;
+
+    @include clearfix();
+
+    button {
+      cursor: pointer;
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid $deepblue;
+      color: $deepblue;
+      font-size: .9em;
+      font-weight: 400;
+      float: right;
+      margin: 0 10px;
+      background-color: white;
+      outline: 0;
+      @include border-radius(20px);
+      @include transition(all .3s);
+      
+      &:hover, &:active {
+        border: 1px solid $orange;
+        color: $orange;
+      }
+
+      @include range-width(0, 695px) {
+        float: none;
+      }
+    }
+  }
+}
+

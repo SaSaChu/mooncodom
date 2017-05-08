@@ -47,6 +47,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   .pro_cent_box {
     display: inline-block;
     max-width: $allwidth;
+    width: 100%;
 
     @include range-width(0, 1200px) {
       padding: 0 10px;

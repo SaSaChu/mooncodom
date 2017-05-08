@@ -69,6 +69,12 @@ html {
 .icon-youtube:before {
   content: "\e901";
 }
+.icon-arrow-left:before {
+  content: "\e094";
+}
+.icon-arrow-right:before {
+  content: "\e095";
+}
 .icon-social-facebook:before {
   content: "\e907";
 }
@@ -146,10 +152,17 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         width: 180px;
       }
 
-      img {
+      a {
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        
+        img {
         width: 100%;
         // height: 48px;
+        }
       }
+      
     }
     
     .icons {
@@ -1058,6 +1071,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         .p_name, .p_type, .p_price {
           display: inline-block;
           width: 100%;
+          cursor: pointer;
+          text-decoration: none;
         }
 
         .p_name, .p_price {
@@ -1451,6 +1466,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           }
 
           a {
+            text-decoration: none;
             cursor: pointer;
             display: inline-block;
             font-size: .9em;

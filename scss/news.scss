@@ -6,44 +6,72 @@
 @import "_oa";
 
 $allwidth: 1170px;
+
+$orange: rgba(255, 74, 4, 1.00);
+$deepblue: rgba(23, 28, 35, 1.00);
+$grey: rgba(102, 102, 102, 1.00);
+
+$bglightgrey: rgba(248, 248, 248, 1.00);
+
 #header {
-  position: relative;
   display: inline-block;
   width: 100%;
   height: 200px;
-  background-color: rgba(223, 121, 39, 1.00);
 
-  span {
-    position: absolute;
-    top: calc(50% - 30px - 20px / 2);
-    left: 0;
+  .news_bg {
+    position: relative;
     display: inline-block;
     width: 100%;
-    height: 30px;
-    color: white;
-    text-align: center;
-    &:first-child {
-      font-weight: bold;
-      font-size: 20px; 
+    height: 200px;
+    background-image: url(../img/banner02.jpg);
 
-      &:before {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: calc(50% - 50px / 2);
-        display: inline-block;
-        width: 50px;
-        height: 3px;
-        background-color: white;
-      }
+    &.bg2 {
+      background-image: url(../img/banner05.jpg);
     }
-    &:last-child {
-      font-size: 14px;
-      top: calc(50% + 20px);
-      text-transform: uppercase;
+
+    &.bg3 {
+      background-image: url(../img/banner01.jpg);
+    }
+
+     &.bg4 {
+      background-image: url(../img/banner03.jpg);
+    }
+
+    span {
+      position: absolute;
+      top: calc(50% - 30px - 20px / 2);
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: 30px;
+      color: white;
+      text-align: center;
+
+      &:first-child {
+        font-weight: bold;
+        font-size: 20px; 
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: calc(50% - 50px / 2);
+          display: inline-block;
+          width: 50px;
+          height: 3px;
+          background-color: white;
+        }
+      }
+
+      &:last-child {
+        font-size: 14px;
+        top: calc(50% + 20px);
+        text-transform: uppercase;
+      }
     }
   }
 }
+
 
 #article {
   display: inline-block;
@@ -52,13 +80,13 @@ $allwidth: 1170px;
   .cover {
     display: inline-block;
     width: 100%;
-    margin-top: 60px;
-    @include range-width(0,400px){
-      margin-top: 0;
-    }
-    @include range-width(400px,750px){
-      margin-top: 30px;
-    };
+    // margin-top: 60px;
+    // @include range-width(0,400px){
+    //   margin-top: 0;
+    // }
+    // @include range-width(400px,750px){
+    //   margin-top: 30px;
+    // };
     img {
       display: inline-block;
       max-width: $allwidth;
@@ -70,51 +98,65 @@ $allwidth: 1170px;
     display: inline-block;
     height: 100px;
     width: 100%;
+
     > a {
+      cursor: pointer;
       position: absolute;
       top: calc(50% - 35px / 2);
       left: 50px;
-
       
       display: inline-block;
       height: 35px;
       line-height: 35px;
       text-decoration: none;
       color: rgba(69, 69, 69, 1.00);
+      @include transition(all .3s);
+      
 
-      @include range-width(0,500px){
+      @include range-width(0,500px) {
         left: 20px;
       }
-      @include range-width(500px,600px){
+      @include range-width(500px,600px) {
         left: 30px;
       }
-      @include range-width($allwidth){
+      @include range-width($allwidth) {
         left: calc(50% - #{$allwidth} / 2 + 50px);
       }
-
 
       i {
         display: inline-block;
         line-height: 35px;
       }
+
+      &:hover, &:active {
+        color: $orange;
+      }
+
       &.next {
         right: 50px;
-        @include range-width(0,500px){
+        @include transition(all .3s);
+        
+
+        @include range-width(0,500px) {
           right: 20px;
         }
-        @include range-width(500px,600px){
+        @include range-width(500px,600px) {
           right: 30px;
         }
-        @include range-width($allwidth){
+        @include range-width($allwidth) {
           right: calc(50% - #{$allwidth} / 2 + 50px);
         }
 
-
         left: auto;
+
+        &:hover, &:active {
+          color: $orange;
+        }
       }
     }
 
   }
+
   > section {
     display: inline-block;
     margin: 0 auto;
@@ -149,13 +191,21 @@ $allwidth: 1170px;
 .newss {
   display: inline-block;
   width: 100%;
-  margin-top: 85px;
-  @include range-width(0, 400px){
+  // margin-top: 85px;
+  margin-bottom: 100px;
+
+  @include range-width(0, 400px) {
     margin-top: 0;
+    margin-bottom: 20px;
+    margin: 0 10px;
   }
-  @include range-width(400px, 600px){
+
+  @include range-width(400px, 600px) {
     margin-top: 55px;
+    margin-bottom: 55px;
+    margin: 0 10px;
   }
+
   > div {
     display: inline-block;
     margin: 0 auto;
@@ -168,13 +218,13 @@ $allwidth: 1170px;
       float: left;
       display: inline-block;
       text-align: left;
-      @include range-width(0, 600px){
+      @include range-width(0, 600px) {
         width: 100%;
         + .news {
           margin-top: 50px;
         }
       }
-      @include range-width(600px, 850px){
+      @include range-width(600px, 850px) {
         width: calc(50% - 30px / 2);
 
         &:nth-child(2n + 2) {
@@ -184,7 +234,7 @@ $allwidth: 1170px;
           margin-top: 30px;
         }
       }
-      @include range-width(850px){
+      @include range-width(850px) {
 
         width: calc(50% - 50px / 2);
 
@@ -195,55 +245,169 @@ $allwidth: 1170px;
           margin-top: 50px;
         }
       }
+
       .img {
+        cursor: pointer;
         display: inline-block;
         width: 100%;
         height: 300px;
-        @include range-width(0, 700px){
+
+        @include range-width(0, 700px) {
           height: 200px;
         };
-        @include range-width(700px, 850px){
+        @include range-width(700px, 850px) {
           height: 250px;
         };
+
+        &:hover {
+          opacity: .8;
+        }
       }
+
       a {
         cursor: pointer;
-        color: rgba(220, 93, 59, 1.00);
+        color: $orange;
         text-decoration: none;
+
+        &:hover {
+          color: rgba(231, 73, 26, .8);
+        }
       }
+
       div {
         text-decoration: none;
         font-size: 22px;
         display: inline-block;
         width: 100%;
         margin-top: 30px;
-        @include range-width(0, 600px){
+        @include range-width(0, 600px) {
           padding: 0 8px;
         }
         @include overflow-docx3();
       }
+
       p {
         display: inline-block;
         width: 100%;
-        margin-top: 40px;
+        margin-top: 20px;
         color: rgba(154, 154, 154, 1.00);
         font-size: 16px;
         line-height: 22px;
         height: 22px * 4;
         overflow: hidden;
         word-break: break-all;
-        @include range-width(0, 600px){
+        @include range-width(0, 600px) {
           padding: 0 8px;
         }
       }
+
       span {
         display: inline-block;
         width: 100%;
         font-size: 14px;
         color: rgba(154, 154, 154, 1.00);
 
-        @include range-width(0, 600px){
+        @include range-width(0, 600px) {
           padding: 0 8px;
+        }
+      }
+    }
+  }
+}
+
+.new_page_boxs {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 50px;
+
+  @include range-width(0, 615px) {
+    margin-top: 50px;
+  }
+
+  .new_page_box {
+    display: inline-block;
+    width: 100%; 
+    max-width: $allwidth;
+    margin: 0 auto;
+
+    .new_arrow_box {
+      display: inline-block;
+
+      a {
+        display: inline-block;
+        cursor: pointer;
+        color: $deepblue;
+        font-weight: 400;
+        text-decoration: none;
+        line-height: 30px;
+        font-size: 1em;
+        
+        @include range-width(0, 615px) {
+          font-size: .9em;
+        }
+
+        @include transition(all .3s);
+        
+        &:hover, &:active {
+          color: $orange;
+        }
+
+        &:before {
+          display: inline-block;
+          content: '\e094';
+          font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+          margin: 0 5px;
+        }
+
+        &.aar {
+          &:before {
+            display: none;
+          }
+
+          &:after {
+            display: inline-block;
+            content: '\e095';
+            font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+            margin: 0 5px;            
+          }
+        }
+      }
+    }
+
+    .new_num_box {
+      display: inline-block;
+      margin: 0 50px;
+
+      @include range-width(0, 615px) {
+        margin: 0 ;
+      }
+
+      a {
+        display: inline-block;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        color: $deepblue;
+        border: 2px solid white;
+        font-size: 1em;
+        line-height: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        @include transition(all .3s);
+        margin: 0 15px;
+
+        @include range-width(0, 615px) {
+          margin: 0;
+          font-size: .9em;
+        }
+        
+        &:hover, &:active {
+          border: 2px solid $orange;
+        }
+
+        &.aaa {
+          border: 2px solid $orange;
+          color: $deepblue;
         }
       }
     }

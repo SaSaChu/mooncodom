@@ -11,7 +11,7 @@ $(function () {
 
   $(".n_picbox, .pic_full, .cent_banner, .ad_pic, .newss .img, .car_banner, table .img").imgLiquid ();
 
-  $('.pop_pic, .p_pic').imgLiquid ({
+  $('.pop_pic, .p_pic, .epl_pic, .epr_pic').imgLiquid ({
     fill: false
   });
 

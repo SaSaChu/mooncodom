@@ -731,6 +731,19 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     margin-bottom: 0;
     padding-bottom: 100px;
     background-color: rgba(246, 246, 246, 1.00);
+
+    @include range-width(325px, 660px) {
+      padding: 0 10px;
+      padding-bottom: 80px;
+      padding-top: 20px;
+      margin-top: 0;
+    }
+
+    @include range-width(0, 325px) {
+      padding: 0 10px;
+      padding-bottom: 50px;
+      padding-top: 40px;
+    }
   }
 
   &.full {

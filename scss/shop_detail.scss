@@ -17,24 +17,336 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 .pro_cent_boxs {
 
   .pro_cent_box {
-    width: $allwidth;
 
     .detial_explain_boxs {
       display: inline-block;
       width: 100%;
+      margin-bottom: 50px;
 
-      @include split-right(400px, '.explain_pic_boxs', '.explain_type_boxs');
+      @include split-right(480px, '.explain_pic_boxs', '.explain_type_boxs');
 
+      @include range-width(910px, 1000px) {
+        padding: 0 10px;
+      }
+
+      @include range-width(0, 950px) {
+        @include split-right(350px, '.explain_pic_boxs', '.explain_type_boxs');
+      }
+
+      // 上面
       .explain_pic_boxs {
-        height: 100px;
-        background-color: rgba(0, 0, 255, 0.2);
+        @include split-left(500px, '.ep_left', '.ep_right');
+
+        @include range-width(1100px, 1140px) {
+          @include split-left(450px, '.ep_left', '.ep_right');
+        }
+
+        @include range-width(950px, 1100px) {
+          @include split-left(350px, '.ep_left', '.ep_right');          
+        }
+
+        @include range-width(0, 950px) {
+          width: 100%;
+        }
+
+        .ep_left {
+          padding-right: 30px;
+
+          @include range-width(0, 1160px) {
+            padding-right: 20px;
+          }
+
+          @include range-width(0, 960px) {
+            width: 100%;
+            padding-right: 0;
+          }
+
+          .epl_pic {
+            position: relative;
+            background-color: white;
+            height: 550px;
+            border: 1px solid rgba(211, 211, 211, 1.00);
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+
+            @include range-width(0, 960px) {
+              height: 450px;
+            }
+
+            .epl_offer {
+              position: absolute;
+              top: 20px;
+              left: 20px;
+              display: inline-block;
+              width: 55px;
+              height: 55px;
+              float: right;
+              background-color: rgba(255, 217, 40, 1.00);
+              padding: 10px;
+
+              @include range-width(0, 475px) {
+                padding: 5px;
+                width: 50px;
+                height: 50px;
+              }
+
+              .epl_offer_number, .epl_off {
+                display: inline-block;
+                font-size: 1em;
+                width: 100%;
+
+                @include range-width(0, 475px) {
+                  font-size: .9em;
+                }
+              }
+              
+              .epl_offer_number {
+                display: inline-block;
+                width: 100%;
+                font-weight: 600;
+
+                &:after {
+                  display: inline-block;
+                  content: '%';
+                  font-size: .4em;
+                  margin-right: 3px;
+                }
+              }
+
+              .epl_off {
+                font-weight: 400;
+
+                &.aa {
+                  font-size: .9em !important;
+                  font-weight: 600;
+                }
+              }
+            }
+          }          
+        }
+
+        .ep_right {
+
+          @include range-width(475px, 960px) {
+            width: 100%;
+            @include clearfix();
+            margin-top: 10px;
+          }
+
+          @include range-width(0, 475px) {
+            width: 100%;
+            @include clearfix();
+            margin-top: 10px;
+          }
+
+          .epr_pic {
+            background-color: white;
+            margin-bottom: 20px;
+            height: 170px;
+            border: 1px solid rgba(211, 211, 211, 1.00);
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+
+            @include range-width(0, 960px) {
+              width: calc(100% / 3 - 10px * 2 / 3);
+              float: left;
+              height: 150px;
+
+              &:nth-child(2) {
+                margin: 0 10px;
+              }
+            }
+
+            // @include range-width(0, 475px) {}
+
+
+          }
+        }
       }
 
       .explain_type_boxs {
-        height: 100px;
-        background-color: rgba(0, 128, 0, 0.2);
+        padding-left: 100px;
+
+        @include range-width(950px, 1160px) {
+          padding-left: 50px;
+        }
+
+        @include range-width(0, 950px) {
+          width: 100%;
+          padding-left: 0;
+        }
+
+        .et_boxs {
+          border-bottom: 1px solid rgba(209, 209, 209, 1.00);
+          text-align: left;
+
+          .et_name, .et_type, .et_price {
+            display: inline-block;
+            width: 100%;
+            color: $deepblue;
+            padding: 0;
+            margin: 0;
+            white-space: pre-wrap;
+          }
+
+          .et_name {
+            font-size: 1.4em;
+            font-weight: 600;
+          }
+
+          .et_type {
+            font-size: 1em;
+            font-weight: 400;
+            padding: 10px 0;
+          }
+
+          .et_price {
+            font-size: 1.2em;
+            font-weight: 600;
+            padding: 30px 0;
+
+            &:before {
+              display: inline-block;
+              content: '$';
+              font-size: .4em;
+              margin-right: 3px;
+            }
+          }
+
+          .et_detial_boxs {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+
+            .et_detial_box {
+              display: inline-block;
+              padding: 10px 0;
+              margin-right: 15px;
+
+              @include clearfix();
+
+              .et_a, .et_b {
+                display: inline-block;
+                font-size: .9em;
+                font-weight: 400;
+                padding: 0;
+                margin: 0;
+                float: left;
+              }
+
+              .et_a {
+                color: $deepblue;
+
+                &:after {
+                  display: inline-block;
+                  content: ':';
+                  margin: 0 8px;
+                }
+              }
+
+              .et_b {
+                color: $orange;
+              }
+            }
+          }
+        }
+
+        .et_a_boxs {
+          display: inline-block;
+          width: 100%;
+          text-align: left;
+
+          @include clearfix();
+
+          .et_a_box {
+            display: inline-block;
+            width: 50%;
+            padding: 20px 0 10px 0;
+            float: left;
+
+            .et_c {
+              font-size: 1em;
+              color: $deepblue;
+              font-weight: 600;
+            }
+          }
+
+          button {
+            display: inline-block;
+            width: 100%;
+            color: white;
+            background-color: $deepblue;
+            padding: 15px;
+            margin: 20px 0;
+            border: 0;
+            outline: 0;
+            font-size: 1em;
+            font-weight: 600;
+            @include transition(all .3s);
+            
+            &:hover, &:active {
+              background-color: $orange;
+            }
+          }
+        }
+
+        .et_b_boxs {
+          display: inline-block;
+          width: 100%;
+          text-align: left;
+
+          .et_brand, .et_brand_type, .et_brand_link {
+           display: inline-block;
+            width: 100%;
+          }
+
+          .et_brand, .et_brand_type {
+            color: $deepblue;
+            border-bottom: 1px solid rgba(203, 203, 203, 1.00);
+          }
+
+          .et_brand {
+            font-size: 1em;
+            font-weight: 600;
+            padding-bottom: 15px;
+          }
+
+          .et_brand_type {
+            font-size: .9em;
+            padding: 15px 0;
+          }
+
+          .et_brand_link {
+            display: inline-block;
+            width: 100%;
+            padding: 10px 0;
+            @include clearfix();
+
+            > a {
+              float: right;
+              display: inline-block;
+              cursor: pointer;
+              color: $deepblue;
+              font-size: .9;
+              margin: 0 5px;
+              @include transition(all .3s);
+              
+              &:hover, &:active {
+                color: $orange;
+              }
+            }
+          }
+        }
       }
 
+
+      // 下面
       .detial_explain_title {
         display: inline-block;
         width: 100%;
@@ -96,3 +408,17 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

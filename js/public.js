@@ -75,4 +75,11 @@ $(function () {
     }
   });
 
+  $('.epr_pic').click (function () {
+    $('.epl_pic').find ('img').attr ('src', $(this).find ('img').attr ('src'));
+    $('.epl_pic').imgLiquid ({
+      fill: false
+    });
+  });
+
 });

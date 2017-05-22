@@ -72,8 +72,12 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
               height: auto;
             }
 
-            @include range-width(0, 960px) {
+            @include range-width(475px, 960px) {
               height: 450px;
+            }
+
+            @include range-width(0, 475px) {
+              height: 350px;
             }
 
             .epl_offer {
@@ -153,7 +157,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
               height: auto;
             }
 
-            @include range-width(0, 960px) {
+            @include range-width(475px, 960px) {
               width: calc(100% / 3 - 10px * 2 / 3);
               float: left;
               height: 150px;
@@ -163,7 +167,15 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
               }
             }
 
-            // @include range-width(0, 475px) {}
+            @include range-width(0, 475px) {
+              width: calc(100% / 3 - 10px * 2 / 3);
+              float: left;
+              height: 120px;
+
+              &:nth-child(2) {
+                margin: 0 10px;
+              }
+            }
 
 
           }

@@ -179,9 +179,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       color: rgba(48, 56, 81, 1.00);
     }
     p {
-      color: rgba(153, 152, 153, 1.00);
+      color: $grey;
       font-size: 1em;
       line-height: 1.8em;
+      padding: 10px 0;
       + h1, + h2 {
         margin-top: 50px
       }

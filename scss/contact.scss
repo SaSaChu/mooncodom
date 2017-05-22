@@ -18,15 +18,40 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   display: inline-block;
   width: 100%;
 
-  height: 500px;
-  border: 1px solid rgba(255, 0, 0, .3);
   .contact_box {
     display: inline-block;
     max-width: $allwidth;
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 100px;
 
     height: 300px;
-    background-color: rgba(0, 0, 255, 0.2);
+
+    @include split-right(440px, '.cl_boxs', '.cr_boxs');
+
+    .cl_boxs {
+      .cl_top {
+        padding-bottom: 25px;
+        border-bottom: 1px solid rgba(202, 207, 213, 1.00);
+      }
+
+      .cl_ce {}
+
+      .cl_do {}
+    }
+
+    .cr_boxs {
+      padding-left: 30px;
+      text-align: left;
+
+      .y_boxs {
+        display: inline-block;
+        width: 100%;
+        padding: 30px;
+        margin-top: 20px;
+        border: 5px solid rgba(255, 220, 22, 1.00);
+        height: 300px;
+      }
+    }
   }
 }

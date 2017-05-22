@@ -4,9 +4,11 @@
  */
 
 $(function () {
+  $('#news_box').append ($('.hnav').clone ());
+  
   $('body').append ($('<div />').attr ('id', 'menu_mobile').append ($('<label />').addClass ('icon-cross').attr ('for', 'menu_ckeckbox')).append (
-    $('#menu .nav_box a').map (function () {
-      return $('<div />').append ($(this).clone ());
+    $('#menu .nav_box *').map (function () {
+      return $('<div />').addClass ($(this).hasClass('hnav') ? 'a' : null).append ($(this).clone ());
     }).toArray ())).append ($('<label />').attr ('for', 'menu_ckeckbox'));
 
   $(".n_picbox, .pic_full, .cent_banner, .ad_pic, .car_banner, .newss .img").imgLiquid ();

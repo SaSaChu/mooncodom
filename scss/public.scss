@@ -237,6 +237,16 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       justify-content: flex-end;
       align-items: center;
 
+      .hnav {
+        display: none;
+        +.nav {
+
+          margin-left: 30px;
+          @include range-width(0, 925px) {
+            margin-left: 10px;
+          }
+        }
+      }
       .nav {
         display: inline-block;
         cursor: pointer;
@@ -303,7 +313,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   @include transition(right .3s, opacity .3s);
   
 
-  label {
+  > label {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -328,7 +338,28 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     + div {
       border-top: 1px solid rgba(230, 230, 230, 1.00);
     }
+    &:not(.a) {
+      + .a {
+        padding-top: 10px + 8px;
+      }
+    }
 
+    &.a {
+      + .a {
+        border-top: 0;
+      }
+      + div:not(.a) {
+        margin-top: 0 + 8px;
+      }
+    }
+    .hnav {
+      color: rgba(126, 131, 135, 1.00);
+      padding-left: 32px;
+      text-decoration: none;
+      &.active, &:hover {
+        color: rgba(231, 173, 153, 1.00);
+      }
+    }
     .nav {
       position: relative;
       z-index: 2;
@@ -1904,3 +1935,75 @@ footer {
 
 
 
+
+#news_ckeckbox:checked {
+  ~ #news_box {
+    top: 120px;
+    z-index: 999;
+    @include opacity(1);
+  }
+}
+#news_box {
+  position: fixed;
+  top: -100%;
+  display: inline-block;
+  width: 200px;
+  z-index: -999;
+  background-color: white;
+  padding: 16px;
+  @include opacity(0);
+  @include transition(opacity .3s);
+  @include border-radius(3px);
+  @include box-shadow(0 0 2px rgba(0,0,0,.3));
+
+  @include range-width(0, 820px) {
+    display: none;
+  }
+  @include range-width(820px, 925px) {
+    right: 406px;
+  }
+  @include range-width(925px, $allwidth) {
+    right: 478px;
+  };
+  @include range-width($allwidth) {
+    right: calc(50% - 110px);
+  };
+
+  &:after, &:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-color: transparent;
+    border-bottom-color: white;
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  &:before {
+    border-color: transparent;
+    border-bottom-color: rgba(235, 235, 235, 1.00);
+    border-width: (10px + 2px);
+    margin-left: -(10px + 2px);
+  }
+  a {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    color: rgba(38, 46, 57, 1.00);
+    text-decoration: none;
+    text-align: left;
+    font-weight: bold;
+    @include transition(color .3s);
+
+    &:hover {
+      color: rgba(223, 105, 82, 1.00);
+    }
+  }
+}

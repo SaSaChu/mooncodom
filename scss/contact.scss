@@ -25,32 +25,200 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     margin: 0 auto;
     margin-bottom: 100px;
 
-    height: 300px;
+    @include range-width(720px, 1200px) {
+      padding: 0 10px; 
+    }
+
+    @include range-width(0, 720px) {
+      padding: 0 15px; 
+    }
 
     @include split-right(440px, '.cl_boxs', '.cr_boxs');
 
+    @include range-width(720px, 1030px) {
+      @include split-right(340px, '.cl_boxs', '.cr_boxs');
+    }
+
+    @include range-width(0, 720px) {
+      width: 100%;
+    }
+
     .cl_boxs {
+
+      @include range-width(0, 720px) {
+        width: 100%;
+      }
+
       .cl_top {
         padding-bottom: 25px;
         border-bottom: 1px solid rgba(202, 207, 213, 1.00);
+        text-align: left;
+
+        span, select {
+          font-weight: 600;
+          color: $deepblue;
+        }
+
+        span {
+          display: inline-block;
+          font-size: 1.4em;
+          padding-right: 15px;
+          // padding-top: 3px;
+          @include range-width(0, 475px) {
+            width: 100%;
+          }
+        }
+
+        select {
+          @include range-width(0, 475px) {
+            width: 100%;
+            margin-top: 15px;
+          }
+
+          display: inline-block;
+          width: 50%;
+          height: 30px;
+          padding: 20px 15px;
+          font-size: 1em;
+          outline: 0;
+          background-color: transparent;
+          border: 1px solid rgba(46, 58, 74, 1.00);
+          @include border-radius(3px);
+          
+        }
       }
 
-      .cl_ce {}
+      .cl_ce {
+        margin: 20px 0;
+        @include clearfix();
+        
+        .in_50 {
+          display: inline-block;
+          width: 48%;
+          float: left;
+          text-align: left;
+          margin-top: 15px;
 
-      .cl_do {}
+          @include range-width(0, 475px) {
+            width: 100%;
+          }
+
+          span, .in, textarea {
+            display: inline-block;
+            width: 100%;
+            color: rgba(98, 106, 119, 1.00);
+            font-size: 1em;
+          }
+
+          .in, textarea {           
+            border: 1px solid $deepblue;
+            outline: 0;
+            margin-top: 10px;
+            padding: 10px 15px;
+          }
+
+          &:nth-child(2), &:nth-child(4) {
+            float: right;
+          }
+
+          &.in_100 {
+            width: 100%;
+          }
+        }
+
+      }
+
+      .cl_do {
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        @include split-right(150px, '.code_boxs','button');
+
+        .code_boxs {
+          height: 50px;
+          font-size: 1em;
+          color: $deepblue;
+
+          @include range-width(0, 475px) {
+            width: 100%;
+          }
+        }
+
+        button {
+          @include range-width(0, 475px) {
+            width: 100%;
+            margin-top: 30px;
+          }
+
+          font-size: 1.2em;
+          font-weight: 600;
+          color: white;
+          padding: 10px 15px; 
+          background-color: $deepblue;
+          outline: 0;
+          border: 0;
+          cursor: pointer;
+          @include border-radius(3px);
+          @include transition(background-color .3s);
+          
+          &:hover, &:active {
+            background-color: rgba(23, 28, 35, .9);
+          }
+        }
+      }
     }
 
     .cr_boxs {
       padding-left: 30px;
       text-align: left;
 
+      @include range-width(0, 720px) {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 50px;
+      }
+
       .y_boxs {
         display: inline-block;
         width: 100%;
         padding: 30px;
-        margin-top: 20px;
         border: 5px solid rgba(255, 220, 22, 1.00);
         height: 300px;
+
+        @include range-width(0, 720px) {
+          height: auto;
+        }
+
+        a, p {
+          display: inline-block;
+          color: $deepblue;
+          font-size: 1.2em;
+          font-weight: 600;
+        }
+
+        p {          
+          padding: 0;
+          margin: 0;
+
+          &.space01 {
+            margin-top: 20px;
+          }
+        }
+
+        a {
+          display: inline-block;
+          cursor: pointer;
+          padding-top: 10px; 
+          @include transition(color .3s);
+          
+          &:hover, &:active {
+            color: $orange;
+          }
+
+          @include range-width(0, 720px) {
+            margin-top: 10px;
+          }
+        }
       }
     }
   }

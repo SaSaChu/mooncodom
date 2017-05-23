@@ -103,6 +103,7 @@ table {
   max-width: $allwidth;
   margin-bottom: 20px;
 
+
   @include range-width(0, 500px) {
     width: 100%;
   }
@@ -123,6 +124,17 @@ table {
         border-bottom: 1px solid rgba(229, 228, 230, 1.00);
         padding: 16px 0;
 
+        &.m_th {
+          &:nth-child(1), &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+            width: 15%;
+          }
+
+          &:nth-child(2), &:nth-child(3) {
+            width: 50%;
+          }
+
+        }
+
         &:nth-child(1) {
           width: 35%;
 
@@ -130,6 +142,8 @@ table {
             width: 45%;
             text-align: left;
           }
+
+        
 
         }
 
@@ -164,11 +178,12 @@ table {
       td {
         padding: 16px 0;
         vertical-align: middle;
+
         @include range-width(0, 500px) {
           padding: 16px 6px;
           font-size: 13px;
         }
-        // border: 1px solid rgba(255, 0, 0, .3);
+        
         sup {
           font-size: 10px;
           vertical-align: top;
@@ -178,6 +193,7 @@ table {
             display: none;
           }
         }
+
         a {
           color: rgba(142, 143, 144, 1.00);
           font-size: 14px;
@@ -189,11 +205,13 @@ table {
             color: $orange;
           }
         }
+
         select {
           // @include range-width(0, 500px) {
           //   width: 100%;
           // }
         }
+
         &:nth-child(1) {
           @include clearfix();
           > * {
@@ -202,6 +220,7 @@ table {
             }
             display: inline-block;
           }
+
           .img {
             width: 135px;
             height: 135px;
@@ -225,6 +244,7 @@ table {
               width: 100%;
             }
           }
+
           div:nth-child(2) {
             display: inline-block;
             width: calc(100% - 135px);
@@ -232,6 +252,7 @@ table {
             height: 135px;
             text-align: left;
             padding-left: 32px;
+
 
             @include range-width(0, 700px) {
               width: 100%;
@@ -247,20 +268,37 @@ table {
               color: rgba(41, 49, 63, 1.00);
               text-transform: uppercase;
               font-size: 18px;
+
               @include range-width(0, 500px) {
                 font-size: 14px;
               }
             }
+
             > * {
               @include overflow-docx3();
             }
+
             span {
               display: inline-block;
               width: 100%;
               margin-top: 4px;
               color: rgba(154, 154, 154, 1.00);
             }
+
           }
+        }
+
+        .m_b {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          color: $grey;
+          font-size: 1em;
+          font-weight: 400;
+          text-align: left;
+          line-height: 1.4em;
+          padding: 0 10px;
         }
       }
     }

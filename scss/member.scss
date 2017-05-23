@@ -1,0 +1,388 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+$allwidth: 1170px;
+
+$orange: rgba(255, 74, 4, 1.00);
+$deepblue: rgba(23, 28, 35, 1.00);
+$grey: rgba(102, 102, 102, 1.00);
+
+$bglightgrey: rgba(248, 248, 248, 1.00);
+
+
+.member_boxs {
+  display: inline-block;
+  width: 100%;
+
+  .member_box {
+    display: inline-block;
+    width: 100%;
+    max-width: $allwidth;
+    margin: 0 auto;
+    margin-bottom: 80px;
+
+    @include range-width(720px, 1200px) {
+      padding: 0 10px; 
+    }
+
+    @include range-width(0, 720px) {
+      padding: 0 15px; 
+    }
+
+    .login_boxs {
+      display: inline-block;
+      width: 50%;
+      margin: 0 auto;
+
+
+      .login_box {
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 20px; 
+        @include clearfix();
+        
+        @include split-left(200px, 'span', 'input');
+
+        span, input {
+          font-size: 1em;
+          font-weight: 600;
+          color: $deepblue;
+        }
+
+        span {
+          line-height: 2.5em;
+        }
+
+        input {
+          padding: 10px 15px;
+          outline: 0;
+          border: 1px solid $deepblue;
+        }
+
+        &.log2 {
+          text-align: right;
+
+          .fopw {
+            cursor: pointer;
+            display: inline-block;
+            padding: 0 15px;
+            text-decoration: none;
+            font-size: 1em;
+            padding-top: 10px;
+            font-weight: 400;
+            color: $deepblue;
+            @include transition(color .3s);
+            
+            &:hover, &:active {
+              color: $orange;
+            }
+          }
+
+          button {
+            font-size: 1em;
+            font-weight: 600;
+            color: white;
+            padding: 8px 25px; 
+            background-color: $deepblue;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            @include border-radius(3px);
+            @include transition(background-color .3s);
+            
+            &:hover, &:active {
+              background-color: rgba(23, 28, 35, .9);
+            }
+          }
+        }
+
+
+      }
+      
+    }
+
+    @include split-left(250px, '.ml_boxs', '.mr_boxs');
+
+    @include range-width(1055px, 1200px) {
+      @include split-left(150px, '.ml_boxs', '.mr_boxs');
+    }
+
+    .ml_boxs {
+      text-align: left;
+
+      @include range-width(0, 1055px) {
+        width: 100%;
+      }
+
+      @include range-width(0, 475px) {
+         font-size: 1em;
+         border-bottom: 1px solid rgba(220, 219, 220, 1.00);
+       }
+
+      .m_tag {
+        cursor: pointer;
+        display: inline-block;
+        width: 100%;
+        color: $deepblue;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding-bottom: 20px;
+        @include transition(color .3s);
+        text-decoration: none;
+
+        @include range-width(0, 475px) {
+          font-size: 1em;
+        }
+        
+        &:before {
+          display: inline-block;
+          content: '▪';
+          color: $orange;
+          margin-right: 10px;
+          margin-top: 2px;
+        }
+
+        &:hover {
+          color: rgba(102, 102, 102, 1.00);
+        }
+
+        @include range-width(0, 1055px) {
+          width: auto;
+          margin-left: 15px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .mr_boxs {
+      @include range-width(0, 1055px) {
+        width: 100%;
+      }
+
+      text-align: left;
+      @include clearfix();
+      
+      .m_list {
+        display: inline-block;
+        width: 100%;
+        border-bottom: 1px solid rgba(220, 219, 220, 1.00);
+        padding: 20px 0;
+
+        .m_title {
+          display: inline-block;
+          width: 150px;
+          float: left;
+          padding: 0;
+          margin: 0;
+          font-size: 1em;
+          color: $deepblue;
+          font-weight: bolder;
+
+          @include range-width(0, 475px) {
+            width: 100%;
+          }
+        }
+
+        .m_date {
+          display: inline-block;
+          float: left;
+          width: calc(100% - 180px);
+          font-size: 1em;
+          color: $deepblue;
+
+          @include range-width(0, 475px) {
+            width: 100%;
+            margin-top: 20px;
+          }
+
+          .m_type {
+            display: inline-block;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            padding-bottom: 10px;
+          }
+
+          .m_in {
+            display: inline-block;
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border: 1px solid $deepblue;
+            @include border-radius(3px);
+          }
+
+          select {
+            display: inline-block;
+            width: 30%;
+            margin-right: 20px;
+            outline: 0;
+            background-color: transparent;
+            font-size: 1em;
+            height: 30px;
+            border: 1px solid $deepblue;
+            margin-bottom: 15px;
+          }
+        }
+
+        .m_ok {
+          float: left;
+          display: inline-block;
+          width: 50%;
+
+          @include range-width(0, 475px) {
+            width: 100%;
+          }
+        }
+        .m_button {
+          float: left;
+          text-align: right;
+          display: inline-block;
+          width: 50%;
+
+          @include range-width(0, 475px) {
+            width: 100%;
+            text-align: left;
+            margin-top: 20px;
+          }
+
+          button {
+            font-size: 1em;
+            font-weight: 600;
+            color: white;
+            padding: 8px 25px; 
+            margin-left: 20px;
+            background-color: $deepblue;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            @include border-radius(3px);
+            @include transition(background-color .3s);
+            
+            &:hover, &:active {
+              background-color: $orange;
+            }
+
+            @include range-width(0, 475px) {
+              width: 40%;
+            }
+          }
+        }
+      }
+      
+    }
+
+
+
+
+
+  }
+}
+
+$changeWidth: 725px;
+
+
+@include range-width(0, $changeWidth) {
+  .table {
+    display: block;
+
+    .tr {
+      display: block;
+      margin: 20px 0;
+      border: 1px solid rgba(225, 225, 225, 1.00);
+      border-bottom: 0;
+
+      .td {
+        display: block;
+        border-bottom: 1px solid rgba(225, 225, 225, 1.00);
+        padding-right: 10px;
+        padding-left: 100px;
+        word-break: break-all;
+
+        div {
+          display: inline-block;
+          width: 90%;
+          padding: 10px 0;
+        }
+
+        &:before {
+          content: attr(title);
+          display: inline-block;
+          width: 100px;
+          background-color: $deepblue;
+          color: white;
+          padding: 10px;
+          height: 110px;
+          text-align: center;
+          margin-left: -100px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+@include range-width($changeWidth) {
+  .table {
+    display: table;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    .tr {
+      display: table-row;
+      @include clearfix();
+      
+      .td {
+        display: table-cell;
+        border: 1px solid rgba(225, 225, 225, 1.00);
+        padding: 10px 10px;
+        width: calc(100% / 6);
+      }
+
+      &:first-child { // 第一行的 tr
+        
+        .td {
+          position: relative;
+
+          &:before {
+            content: attr(title);
+            display: inline-block;
+            width: calc(100% + 10px * 2);
+            margin-left: -10px;
+            background-color: $deepblue;
+            line-height: 35px;
+            height: 35px;
+            @include overflow-docx3();
+            color: white;
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

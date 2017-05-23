@@ -356,8 +356,9 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       color: rgba(126, 131, 135, 1.00);
       padding-left: 32px;
       text-decoration: none;
+      font-weight: 400;
       &.active, &:hover {
-        color: rgba(231, 173, 153, 1.00);
+        color: $orange;
       }
     }
     .nav {

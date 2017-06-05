@@ -38,6 +38,9 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       width: 50%;
       margin: 0 auto;
 
+      @include range-width(0, 990px) {
+        width: 100%;
+      }
 
       .login_box {
         display: inline-block;
@@ -45,6 +48,55 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         width: 100%;
         margin-bottom: 20px; 
         @include clearfix();
+
+
+        .or_line {
+          display: inline-block;
+          width: 100%;
+          color: rgba(98, 106, 119, 1.00);
+          font-size: 1em;
+          text-align: center;
+          position: relative;
+
+          &:before, &:after {
+            display: inline-block;
+            content: '';
+            width: 45%;
+            border-bottom: 1px solid rgba(98, 106, 119, .5)
+          }
+
+          &:before {
+            position: absolute;
+            top: 10px;
+            left: 0;
+          }
+
+           &:after {
+            position: absolute;
+            top: 10px;
+            right: 0;
+          }
+        }
+
+        .fb_btn {
+          display: inline-block;
+          width: 100%;
+          margin: 20px 0;
+          padding: 10px 20px;
+          background-color: rgba(59, 89, 152, 1.00);
+          @include border-radius(3px);
+          color: white;
+          font-size: 1.2em;
+          font-weight: bolder;
+          outline: 0;
+          border: 0;
+          cursor: pointer;
+          @include transition(background-color .3s);
+
+          &:hover, &:active {
+            background-color: rgba(59, 89, 152, .8);
+          }
+        }
         
         @include split-left(200px, 'span', 'input');
 
@@ -67,6 +119,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         &.log2 {
           text-align: right;
 
+          @include range-width(0, 475px) {
+            text-align: left;
+          }
+
           .fopw {
             cursor: pointer;
             display: inline-block;
@@ -80,6 +136,11 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             
             &:hover, &:active {
               color: $orange;
+            }
+
+             @include range-width(0, 475px) {
+              text-align: left;
+              padding-left: 0;
             }
           }
 
@@ -97,6 +158,12 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             
             &:hover, &:active {
               background-color: rgba(23, 28, 35, .9);
+            }
+
+            @include range-width(0, 475px) {
+              display: inline-block;
+              width: 100%;
+              margin: 10px 0;
             }
           }
         }

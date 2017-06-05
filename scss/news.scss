@@ -91,6 +91,30 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     // @include range-width(400px,750px){
     //   margin-top: 30px;
     // };
+
+    .share_boxs {
+      display: inline-block;
+      width: 100%;
+
+      @include clearfix();
+
+      .share1 {
+        float: right;
+        display: inline-block;
+        margin: 15px 20px 15px 0;
+        color: $deepblue;
+        @include transition(color .3s);
+        
+        &:hover, &:active {
+          color: $orange;
+        }
+
+        @include range-width(0, 595px) {
+          margin: 8px 10px;
+        }
+      }
+    }
+
     img {
       display: inline-block;
       max-width: $allwidth;
@@ -203,13 +227,13 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   @include range-width(0, 400px) {
     margin-top: 0;
     margin-bottom: 20px;
-    margin: 0 10px;
+    // margin: 0 10px;
   }
 
   @include range-width(400px, 600px) {
-    margin-top: 55px;
+    margin-top: 30px;
     margin-bottom: 55px;
-    margin: 0 10px;
+    // margin: 0 10px;
   }
 
   > div {
@@ -224,12 +248,16 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       float: left;
       display: inline-block;
       text-align: left;
+
+      @include clearfix();
+
       @include range-width(0, 600px) {
         width: 100%;
         + .news {
           margin-top: 50px;
         }
       }
+      
       @include range-width(600px, 850px) {
         width: calc(50% - 30px / 2);
 
@@ -307,11 +335,27 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         }
       }
 
+      .share {
+        display: inline-block;
+        margin: 8px 10px 8px 0;
+        color: $deepblue;
+        @include transition(color .3s);
+        
+        &:hover, &:active {
+          color: $orange;
+        }
+
+        @include range-width(0, 595px) {
+          margin: 8px 10px;
+        }
+      }
+
       span {
         display: inline-block;
-        width: 100%;
+        padding: 10px 0 10px 10px;
         font-size: 14px;
         color: rgba(154, 154, 154, 1.00);
+        float: right;
 
         @include range-width(0, 600px) {
           padding: 0 8px;

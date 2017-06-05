@@ -33,11 +33,11 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       padding: 0 15px; 
     }
 
-    @include split-right(440px, '.cl_boxs', '.cr_boxs');
+    // @include split-right(440px, '.cl_boxs', '.cr_boxs');
 
-    @include range-width(720px, 1030px) {
-      @include split-right(340px, '.cl_boxs', '.cr_boxs');
-    }
+    // @include range-width(720px, 1030px) {
+    //   @include split-right(340px, '.cl_boxs', '.cr_boxs');
+    // }
 
     @include range-width(0, 720px) {
       width: 100%;

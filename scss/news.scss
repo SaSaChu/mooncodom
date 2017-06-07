@@ -95,7 +95,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     .share_boxs {
       display: inline-block;
       width: 100%;
-
+      max-width: $allwidth;
+      
       @include clearfix();
 
       .share1 {

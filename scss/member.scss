@@ -236,6 +236,11 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
       text-align: left;
       @include clearfix();
+
+      &.order {
+        display: inline-block;
+        width: 100% !important;
+      }
       
       .m_list {
         display: inline-block;

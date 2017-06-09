@@ -596,6 +596,11 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         @include range-width(0, 800px) {
           padding: 60px 0 30px 0;
         }
+
+        &.o_p {
+          padding-top: 0; 
+        }
+
         p {
           display: inline-block;
           float: right;

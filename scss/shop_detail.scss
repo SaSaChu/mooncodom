@@ -50,10 +50,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         }
 
         .ep_left {
-          padding-right: 30px;
+          padding-right: 10px;
 
           @include range-width(0, 1160px) {
-            padding-right: 20px;
+            padding-right: 10px;
           }
 
           @include range-width(0, 960px) {
@@ -148,8 +148,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
           .epr_pic {
             background-color: white;
-            margin-bottom: 20px;
-            height: 170px;
+            margin-bottom: 10px;
+            height: 176px;
             border: 1px solid rgba(211, 211, 211, 1.00);
 
             img {
@@ -183,7 +183,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       }
 
       .explain_type_boxs {
-        padding-left: 100px;
+        padding-left: 50px;
 
         @include range-width(950px, 1160px) {
           padding-left: 50px;
@@ -295,6 +295,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             width: 50%;
             padding: 5px 0;
             float: left;
+
+            @include range-width(0, 380px) {
+              width: 100%;
+            }
 
             .et_c {
               font-size: 1em;

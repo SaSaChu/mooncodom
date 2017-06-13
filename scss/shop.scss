@@ -63,6 +63,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       text-align: left;
       margin-bottom: 35px;
       padding-bottom: 35px;
+      @include clearfix();
+      
 
       @include range-width(0, 800px) {
         margin-bottom: 25px;
@@ -73,11 +75,13 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       .link {
         display: inline-block;
         color: $grey;
+        float: left;
 
         &:after {
+          font-family: 'icomoon';
           display: inline-block;
-          content: '>';
-          margin-left:5px;
+          content: '\e909';
+          margin: 2px 5px 0 5px;
         }
 
         &:last-child {
@@ -338,7 +342,12 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           // width: calc(100% / 3);
           float: left;
 
-          @include range-width(0, 990px) {
+          @include range-width(0, 845px) {
+            width: 100%;
+            margin-bottom: 20px;
+          }
+
+          @include range-width(845px, 1185px) {
             width: calc(100% / 2 - 25px  / 2);
 
             &:nth-child(2n + 2) {
@@ -350,7 +359,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             }
           }
 
-          @include range-width(990px) {
+          @include range-width(1185px) {
             width: calc(100% / 3 - 25px * 2 / 3);
 
             &:nth-child(3n + 2) {
@@ -372,7 +381,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             @include transition(all .3s);
 
             @include range-width(0, 475px) {
-              height: 200px;
+              height: 300px;
             }
 
             img {
@@ -414,6 +423,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
                 display: inline-block;
                 width: 100%;
                 font-weight: 600;
+                color: $deepblue;
 
                 &:after {
                   display: inline-block;
@@ -425,6 +435,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
               .off {
                 font-weight: 400;
+                color: $deepblue;
 
                 &.aa {
                   font-size: .9em !important;
@@ -439,6 +450,9 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             width: 100%;
             padding: 25px 0; 
 
+            @include range-width(0, 845px) {
+              padding: 15px 0; 
+            }
 
             .name, .detial, .price_boxs {
               display: inline-block;
@@ -465,12 +479,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
                 font-size: 1em;
               }
 
-              @include range-width(475px, 990px) {
+              @include range-width(0, 990px) {
                 font-size: 1.2em;
-              }
-
-              @include range-width(0, 475px) {
-                font-size: .9em;
               }
             }
 
@@ -482,22 +492,22 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
               color: $grey;
               margin: 10px 0;
 
-              @include range-width(990px, 1055px) {
-                font-size: .9em;
-              }
+              // @include range-width(990px, 1055px) {
+              //   font-size: .9em;
+              // }
 
-              @include range-width(475px, 990px) {
-                font-size: 1em;
-              }
+              // @include range-width(0, 990px) {
+              //   font-size: 1em;
+              // }
 
-              @include range-width(325px, 475px) {
-                font-size: .9em;
-              }
+              // @include range-width(325px, 475px) {
+              //   font-size: .9em;
+              // }
 
-              @include range-width(0, 325px) {
-                font-size: .8em;                
-                min-height: 60px;
-              }
+              // @include range-width(0, 325px) {
+              //   font-size: .8em;                
+              //   min-height: 60px;
+              // }
             }
 
             .price_boxs {
@@ -543,10 +553,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             padding: 5px 15px;
             font-size: 1.2em;
             font-weight: 600;
-            color: $deepblue;
-            border: 1px solid $deepblue;
+            color: white;
+            border: 0;
             outline: 0;
-            background-color: white;
+            background-color: rgba(232, 73, 25, .9);
             @include border-radius(20px);
             @include transition(all .3s);
 
@@ -560,8 +570,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             } 
 
             &:hover, &:active {
-              border: 1px solid $orange;
-              color: $orange;
+              // border: 2px solid rgba(232, 73, 25, 1);
+              color: $deepblue;
             }
 
             @include range-width(990px, 1055px) {
@@ -642,6 +652,16 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             
             &:hover, &:active, &.page_ac {
               background-color: $orange;
+            }
+
+            &.pra {
+              color: $deepblue;
+              border: 1px solid white;
+              background-color: white;
+
+              &:hover, &:active {
+                color: $orange;
+              }
             }
 
           }

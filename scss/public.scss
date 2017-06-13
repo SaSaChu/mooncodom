@@ -135,8 +135,12 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     max-width: $allwidth;
 
 
-    @include range-width(0, 925px) {
+    @include range-width(475px, 925px) {
       padding: 0 10px;
+    }
+
+    @include range-width(0, 475px) {
+      padding: 0;
     }
 
     > * {
@@ -148,8 +152,14 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     }
     .nav_logo {
       width: 215px;
-      @include range-width(0, 925px) {
+
+      @include range-width(925px, 1000px) {
         width: 180px;
+      }
+
+      @include range-width(0, 925px) {
+        width: 150px;
+        padding: 10px;
       }
 
       a {
@@ -181,10 +191,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
       > * {
         display: inline-block;
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
         font-weight: normal;
         // border: 1px solid rgba(255, 0, 0, .3);
         cursor: pointer;
@@ -222,10 +232,12 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     }
     .nav_box {
       width: calc(100% - 215px - 80px);
-      @include range-width(0, 820px) {
+
+      @include range-width(0, 825px) {
         display: none;
       }
-      @include range-width(820px, 925px) {
+
+      @include range-width(820px, 990px) {
         width: calc(100% - 180px - 80px);
       }
       // padding: 13px 0;
@@ -241,7 +253,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         display: none;
         +.nav {
 
-          margin-left: 30px;
+          margin-left: 20px;
           @include range-width(0, 925px) {
             margin-left: 10px;
           }
@@ -251,16 +263,23 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         display: inline-block;
         cursor: pointer;
         color: $deepblue;
-        font-size: 1em;
+        font-size: 1.1em;
         font-weight: 600;
         text-decoration: none;
         padding: 0 10px;
+        letter-spacing: 3px;
+
 
         position: relative;
         z-index: 2;
 
         @include transition(all .3s);
         
+        @include range-width(0, 925px) {
+          font-size: .9em;
+          margin-left: 10px;
+        }
+
         &:after {
           content: '';
           position: absolute;
@@ -271,7 +290,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           height: 10px;
           width: 100%;
 
-          background-color: rgba(251, 223, 24, 1.00);
+          background-color: rgba(232, 73, 25, .8);
           z-index: -1;
           @include opacity(0);
           @include transition(opacity .3s);
@@ -286,6 +305,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         + .nav {
           margin-left: 30px;
           @include range-width(0, 925px) {
+            font-size: .9em;
             margin-left: 10px;
           }
         }
@@ -368,13 +388,15 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       flex-basis: 10px;
       cursor: pointer;
       color: $deepblue;
-      font-size: 1em;
+      font-size: 1.1em;
       font-weight: 600;
       text-decoration: none;
       padding: 0 5px;
       width: auto;
       // width: 100%;
       text-align: left;
+      letter-spacing: 3px;
+
 
       @include transition(all .3s);
       
@@ -388,7 +410,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         height: 10px;
         width: 100%;
 
-        background-color: rgba(251, 223, 24, 1.00);
+        background-color: rgba(232, 73, 25, .8);
         z-index: -1;
         @include opacity(0);
         @include transition(opacity .3s);

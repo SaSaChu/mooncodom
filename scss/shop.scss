@@ -469,6 +469,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
               font-size: 1.2em;
               color: $deepblue;
               font-weight: 600;
+              height: 26px;
+              overflow: hidden;
               @include transition(all .3s);
               
               &:hover, &:active {
@@ -488,6 +490,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
               float: left;
               font-size: 1em;
               height: 45px;
+              overflow: hidden;
               font-weight: 400;
               color: $grey;
               margin: 10px 0;

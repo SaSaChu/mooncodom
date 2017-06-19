@@ -222,8 +222,10 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           }
         }
         &:last-child {
+          font-size: 1.6em;
+          padding-top: 2px;
           display: none;
-          color: rgba(83, 142, 190, 1.00);
+          color: #7b7b7e;
           @include range-width(0, 820px) {
             display: inline-block;
           }
@@ -262,12 +264,12 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       .nav {
         display: inline-block;
         cursor: pointer;
-        color: $deepblue;
+        color: rgba(123, 123, 126, 1.00);
         font-size: 1.1em;
-        font-weight: 600;
+        font-weight: 400;
         text-decoration: none;
         padding: 0 10px;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
 
 
         position: relative;
@@ -387,15 +389,15 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       display: inline-block;
       flex-basis: 10px;
       cursor: pointer;
-      color: $deepblue;
+      color: rgba(123, 123, 126, 1.00);
       font-size: 1.1em;
-      font-weight: 600;
+      font-weight: 400;
       text-decoration: none;
       padding: 0 5px;
       width: auto;
       // width: 100%;
       text-align: left;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
 
 
       @include transition(all .3s);
@@ -969,12 +971,12 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
     @include range-width(860px, 1065px) { 
       width: 675px;
-      height: 320px;
+      height: 350px;
     }
 
     @include range-width(800px, 860px) {
       width: 575px;
-      height: 320px;
+      height: 350px;
     }
 
     @include range-width(660px, 800px) {
@@ -984,12 +986,12 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
     @include range-width(320px, 660px) {
       width: 320px;
-      height: 410px;
+      height: 450px;
     }
 
     @include range-width(0, 320px) {
       width: 320px;
-      height: 380px;
+      height: 400px;
     }
 
 
@@ -1158,6 +1160,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           font-size: 1.2em;
           font-weight: 600;
           white-space: pre-wrap;
+          height: 56px;
+          overflow: hidden;
 
           @include transition(all .3s);
           
@@ -1184,6 +1188,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           color: $grey;
           font-size: .9em;
           font-weight: thin;
+          height: 40px;
+          overflow: hidden;
 
           @include transition(all .3s);
           
@@ -1333,7 +1339,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         .title_link {
           cursor: pointer;
           display: inline-block !important;
-          width: 44% !important;
+          width: auto !important;
           height: auto !important;
           float: left;
           color: white;

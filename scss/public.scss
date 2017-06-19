@@ -264,7 +264,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       .nav {
         display: inline-block;
         cursor: pointer;
-        color: rgba(123, 123, 126, 1.00);
+        color: rgba(22, 26, 32, .8);
         font-size: 1.1em;
         font-weight: 400;
         text-decoration: none;
@@ -389,7 +389,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       display: inline-block;
       flex-basis: 10px;
       cursor: pointer;
-      color: rgba(123, 123, 126, 1.00);
+      color: rgba(22, 26, 32, .8);
       font-size: 1.1em;
       font-weight: 400;
       text-decoration: none;
@@ -1984,13 +1984,15 @@ footer {
     display: none;    
   }
   @include range-width(820px, 925px) {
-    right: 406px;
+    top: 83px !important;
+    right: 458px;
   }
   @include range-width(925px, $allwidth) {
-    right: 478px;
+    top: 82px !important;
+    right: 542px;
   };
   @include range-width($allwidth) {
-    right: calc(50% - 110px);
+    right: calc(50% - 51px);
   };
 
   &:after, &:before {
@@ -2023,7 +2025,7 @@ footer {
     color: rgba(38, 46, 57, 1.00);
     text-decoration: none;
     text-align: left;
-    font-weight: bold;
+    // font-weight: bold;
     @include transition(color .3s);
 
     &:hover {

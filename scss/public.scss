@@ -48,6 +48,15 @@ html {
 }
 
 
+.icon-icon-03:before {
+  content: "\e90c";
+}
+.icon-icon-02:before {
+  content: "\e90d";
+}
+.icon-icon-01:before {
+  content: "\e90e";
+}
 .icon-subtract:before {
   content: "\e90a";
 }
@@ -90,7 +99,6 @@ html {
 .icon-cart:before {
   content: "\e906";
 }
-
 
 
 
@@ -194,7 +202,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         width: 40px;
         height: 40px;
         line-height: 40px;
-        font-size: 20px;
+        font-size: 34px;
         font-weight: normal;
         // border: 1px solid rgba(255, 0, 0, .3);
         cursor: pointer;
@@ -208,7 +216,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             content: attr(data-count);
             position: absolute;
             right: -5px;
-            top: -5px;
+            top: 0px;
             display: inline-block;
             padding: 0 7px;
             background-color: #ea473c;
@@ -222,8 +230,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           }
         }
         &:last-child {
-          font-size: 1.6em;
-          padding-top: 2px;
+          font-size: 34px;
           display: none;
           color: #7b7b7e;
           @include range-width(0, 820px) {
@@ -264,7 +271,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       .nav {
         display: inline-block;
         cursor: pointer;
-        color: rgba(22, 26, 32, .8);
+        color: $deepblue;
         font-size: 1.1em;
         font-weight: 400;
         text-decoration: none;
@@ -286,13 +293,13 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           content: '';
           position: absolute;
           left: 0;
-          top: calc(50% - 10px / 2);
+          top: calc(50% - 8px / 2);
 
           display: inline-block;
           height: 10px;
           width: 100%;
 
-          background-color: rgba(232, 73, 25, .8);
+          background-color: rgba(232, 73, 25, .6);
           z-index: -1;
           @include opacity(0);
           @include transition(opacity .3s);
@@ -300,6 +307,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         }
         
         &.active, &:hover {
+
           &:after {
             @include opacity(1);
           }
@@ -389,7 +397,8 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       display: inline-block;
       flex-basis: 10px;
       cursor: pointer;
-      color: rgba(22, 26, 32, .8);
+      color: $deepblue;
+      // rgba(22, 26, 32, .8)
       font-size: 1.1em;
       font-weight: 400;
       text-decoration: none;
@@ -406,13 +415,13 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         content: '';
         position: absolute;
         left: 0;
-        top: calc(50% - 10px / 2);
+        top: calc(50% - 8px / 2);
 
         display: inline-block;
         height: 10px;
         width: 100%;
 
-        background-color: rgba(232, 73, 25, .8);
+        background-color: rgba(232, 73, 25, .6);
         z-index: -1;
         @include opacity(0);
         @include transition(opacity .3s);
@@ -420,6 +429,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       }
       
       &.active, &:hover, &:active {
+
         &:after {
           @include opacity(1);
         }
@@ -447,6 +457,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
   position: fixed;
   @include opacity(0);
 }
+
 #menu_ckeckbox {
   &:checked {
     ~ #menu_mobile {
@@ -839,8 +850,12 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         height: 350px;
       }
 
-      @include range-width(0, 475px) {
-        height: 200px;
+      @include range-width(414px, 475px) {
+        height: 260px;
+      }
+
+      @include range-width(0, 414px) {
+        height: 215px;
       }
 
       .item {
@@ -1188,7 +1203,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           color: $grey;
           font-size: .9em;
           font-weight: thin;
-          height: 40px;
+          height: 45px;
           overflow: hidden;
 
           @include transition(all .3s);
@@ -1291,21 +1306,31 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       position: relative;
       overflow: hidden;
 
-      @include range-width(0, 680px) {
-        width: calc(100% / 2);
+      @include range-width(840px, 1120px) {
+        width: calc(100% / 3);
 
         &:nth-child(7), &:nth-child(8) {
           display: none;
         }
       }
 
-      @include range-width(380px, 450px) {
+      @include range-width(0, 840px) {
+        width: calc(100% / 2);
         height: 225px;
+
+        &:nth-child(n + 4) {
+          border-top: 0;
+        }
+
+        &:nth-child(7), &:nth-child(8) {
+          display: none;
+        }
       }
 
       @include range-width(0, 380px) {
         height: 180px;
       }
+
 
       img {
         width: 100%;

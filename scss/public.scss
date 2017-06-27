@@ -289,28 +289,29 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           margin-left: 10px;
         }
 
-        &:after {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: calc(50% - 8px / 2);
+        // &:after {
+        //   // content: '';
+        //   position: absolute;
+        //   left: 0;
+        //   top: calc(50% - 8px / 2);
 
-          display: inline-block;
-          height: 10px;
-          width: 100%;
+        //   display: inline-block;
+        //   height: 10px;
+        //   width: 100%;
 
-          background-color: rgba(232, 73, 25, .6);
-          z-index: -1;
-          @include opacity(0);
-          @include transition(opacity .3s);
+        //   background-color: rgba(232, 73, 25, .6);
+        //   z-index: -1;
+        //   @include opacity(0);
+        //   @include transition(opacity .3s);
           
-        }
+        // }
         
         &.active, &:hover {
+          color: $orange;
 
-          &:after {
-            @include opacity(1);
-          }
+          // &:after {
+          //   @include opacity(1);
+          // }
         }
         + .nav {
           margin-left: 30px;
@@ -412,7 +413,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       @include transition(all .3s);
       
       &:after {
-        content: '';
+        // content: '';
         position: absolute;
         left: 0;
         top: calc(50% - 8px / 2);
@@ -429,6 +430,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       }
       
       &.active, &:hover, &:active {
+        color: $orange;
 
         &:after {
           @include opacity(1);
@@ -768,6 +770,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         display: inline-block;
         width: 100%;
         padding-top: 20px; 
+        text-align: center;
 
         .pop_name, .pop_cent {
           display: inline-block;
@@ -789,7 +792,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           padding: 10px 0;
           font-size: 1em;
           color: $grey;
-          font-weight: thin;
+          font-weight: 400;
 
           @include range-width(0, 560px) {
             font-size: .9em;
@@ -1205,6 +1208,7 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           font-weight: thin;
           height: 45px;
           overflow: hidden;
+          text-align: center;
 
           @include transition(all .3s);
           

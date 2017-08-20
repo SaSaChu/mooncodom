@@ -227,9 +227,72 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           }
         }
       }
+
+      .step_tag {
+        display: inline-block;
+        width: 100%;
+        color: rgba(23, 28, 35, .7);
+        font-size: 1.2em;
+        font-weight: 600;
+        padding-bottom: 20px;
+        @include transition(color .3s);
+        text-decoration: none;
+
+        @include range-width(0, 475px) {
+          font-size: 1em;
+        }
+
+        &.step_ac {
+          color: $orange;
+        }
+
+        &:nth-child(1) {
+          &:before {
+            display: inline-block;
+            content: '01.';
+            color: $orange;
+            margin-right: 10px;
+            margin-top: 2px;
+          }
+        }
+
+        &:nth-child(2) {
+          &:before {
+            display: inline-block;
+            content: '02.';
+            color: $orange;
+            margin-right: 10px;
+            margin-top: 2px;
+          }
+        }
+
+        &:nth-child(3) {
+          &:before {
+            display: inline-block;
+            content: '03.';
+            color: $orange;
+            margin-right: 10px;
+            margin-top: 2px;
+          }
+        }
+
+        // &:hover {
+        //   color: rgba(102, 102, 102, 1.00);
+        // }
+
+        @include range-width(0, 1055px) {
+          width: auto;
+          margin-left: 15px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
     }
 
     .mr_boxs {
+
       @include range-width(0, 1055px) {
         width: 100%;
       }
@@ -242,15 +305,38 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         width: 100% !important;
       }
       
+      .step_title {
+        display: inline-block;
+        width: 100%;
+        background-color: rgba(23, 28, 35, 1.00);
+        padding: 10px;
+        color: white;
+        font-size: 1em;
+      } 
+
       .m_list {
         display: inline-block;
         width: 100%;
         border-bottom: 1px solid rgba(220, 219, 220, 1.00);
         padding: 20px 0;
 
+        .ccc {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+        }
+
+        .step_check {
+          display: inline-block;
+          width: 100%;
+          font-size: 1em;
+          color: $deepblue;
+          padding-bottom: 10px;
+        }
+
         .m_title {
           display: inline-block;
-          width: 150px;
+          width: 180px;
           float: left;
           padding: 0;
           margin: 0;
@@ -314,17 +400,50 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
             width: 100%;
           }
         }
+
         .m_button {
           float: left;
           text-align: right;
           display: inline-block;
           width: 50%;
+          @include clearfix();
+
+
+          &.step_button {
+            width: 100%;
+          }
+          
 
           @include range-width(0, 475px) {
             width: 100%;
             text-align: left;
             margin-top: 20px;
           }
+
+          a {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 600;
+            color: white;
+            padding: 8px 25px; 
+            margin-left: 20px;
+            background-color: $deepblue;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            @include border-radius(3px);
+            @include transition(background-color .3s);
+            
+            &:hover, &:active {
+              background-color: $orange;
+            }
+
+            @include range-width(0, 475px) {
+              width: 40%;
+            }
+          }
+
 
           button {
             font-size: 1em;
@@ -350,6 +469,38 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         }
       }
       
+
+      .step_dc_boxs {
+        display: inline-block;
+        width: 100%;
+        text-align: right;
+        padding: 10px 0;
+        border-bottom: 1px dotted #dcdbdc;
+
+        .pp {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+          float: right;
+          font-size: 1em;
+          color: $deepblue;
+        }
+
+        .ppp {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+          float: right;
+          width: 100px;
+          font-size: 1em;
+          color: $deepblue;
+          padding-right: 10px;
+
+          @include range-width(0, 350px) {
+            width: 60px;
+          }
+        }
+      }
     }
 
 
@@ -425,6 +576,16 @@ $changeWidth: 725px;
         border: 1px solid rgba(225, 225, 225, 1.00);
         padding: 10px 10px;
         width: calc(100% / 6);
+
+        &.step {
+          width: calc(100% / 4);
+          text-align: center;
+
+          &:first-child {
+            width: 600px;
+            text-align: left;
+          }
+        }
       }
 
       &:first-child { // 第一行的 tr
@@ -432,6 +593,12 @@ $changeWidth: 725px;
         .td {
           position: relative;
 
+          &.step {
+             &:before {
+              background-color: rgba(23, 28, 35, .5);
+             }
+          }
+          
           &:before {
             content: attr(title);
             display: inline-block;

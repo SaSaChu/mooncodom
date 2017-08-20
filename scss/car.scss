@@ -167,8 +167,13 @@ table {
   }
 
   tbody {
+    
     tr {
       border-bottom: 1px solid rgba(220, 219, 220, 1.00);
+
+      &.trd {
+        border-bottom: 1px dotted rgba(220, 219, 220, 1.00);
+      }
 
       &:last-child {
         border-top: 4px double rgba(220, 219, 220, 1.00);
@@ -183,6 +188,10 @@ table {
           padding: 16px 6px;
           font-size: 13px;
         }
+
+        &.tdr {
+          text-align: right;
+        }
         
         sup {
           font-size: 10px;
@@ -195,14 +204,68 @@ table {
         }
 
         a {
-          color: rgba(142, 143, 144, 1.00);
+          color: red;
           font-size: 14px;
           text-decoration: none;
           cursor: pointer;
           @include transition(color .3s);
           
           &:hover {
-            color: $orange;
+            color: rgba(255, 74, 4, .7);
+          }
+        }
+
+        .bb {
+          float: right !important;
+          padding: 0;
+          margin: 0;
+          display: inline-block;
+          color: rgba(41, 49, 63, 1.00);
+          text-transform: uppercase;
+          font-size: 18px;
+          padding: 0 10px;
+
+          @include range-width(0, 500px) {
+            font-size: 14px;
+          }
+        }
+
+        input {
+          display: inline-block;
+          float: right !important;
+          width: 150px;
+          outline: 0;
+          font-size: 14px;
+          padding: 5px;
+          margin: 0 10px;
+          @include border-radius(3px);
+          border-bottom: 1px solid rgba(220, 219, 220, 1.00);
+
+          @include range-width(0, 500px) {
+            width: 80px;
+          }
+        }
+
+        button {
+          display: inline-block;
+          float: right !important;
+          cursor: pointer;
+          width: 100px;
+          outline: 0;
+          border: 0;
+          font-size: 14px;
+          margin: 0 10px;
+          padding: 5px;
+          @include border-radius(3px);
+          background-color: $deepblue;
+          color: white;
+
+          &:hover {
+            background-color: $orange;
+          }
+
+          @include range-width(0, 500px) {
+            width: 80px;
           }
         }
 
@@ -308,7 +371,7 @@ table {
 .btn_boxs {
   display: inline-block;
   width: 100%;
-  margin: 20px 0 100px 0;
+  margin: 20px 0;
 
   .btn_box {
     display: inline-block;
@@ -317,6 +380,39 @@ table {
     margin: 0 auto;
 
     @include clearfix();
+
+    a {
+      cursor: pointer;
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid $deepblue;
+      color: $deepblue;
+      font-size: .9em;
+      font-weight: 400;
+      float: right;
+      margin: 0 10px;
+      background-color: white;
+      outline: 0;
+      text-decoration: none;
+      @include border-radius(20px);
+      @include transition(all .3s);
+      
+      &:hover, &:active {
+        border: 1px solid $orange;
+        color: $orange;
+      }
+
+      @include range-width(350px, 695px) {
+        float: none;
+      }
+      
+      @include range-width(0, 350px) {
+        float: none;
+        padding: 5px 10px;
+        margin: 0 5px;
+        font-size: .85em;
+      }
+    }
 
     button {
       cursor: pointer;
@@ -338,10 +434,79 @@ table {
         color: $orange;
       }
 
-      @include range-width(0, 695px) {
+      @include range-width(350px, 695px) {
         float: none;
+      }
+
+      @include range-width(0, 350px) {
+        float: none;
+        padding: 5px 10px;
+        margin: 0 5px;
+        font-size: .85em;
       }
     }
   }
 }
+
+
+
+
+.car_type {
+  display: inline-block;
+  width: 100%;
+  margin: 20px 0 100px 0;
+
+  .car_boxs {
+    display: inline-block;
+    width: $allwidth;
+    margin: 0 auto;
+    text-align: left;
+
+    @include range-width(0, 650px) {
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    span, p {
+      display: inline-block;
+      width: 100%;
+      font-size: 1rem;
+
+      @include range-width(0, 650px) {
+        font-size: .9rem;
+      }
+    }
+
+    span {
+      font-weight: bolder;
+      color: $deepblue;
+      padding-bottom: 5px; 
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+      color: $grey;
+      padding: 3px 0; 
+
+      a {
+        display: inline-block;
+        cursor: pointer;
+        color: $orange;
+        text-decoration: none;
+
+        &:hover {
+          font-weight: 600;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+
 

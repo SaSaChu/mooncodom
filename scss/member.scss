@@ -49,6 +49,30 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
         margin-bottom: 20px; 
         @include clearfix();
 
+        .fist_btn {
+          display: inline-block;
+          width: 100%;
+          font-size: 1em;
+          font-weight: 600;
+          color: white;
+          padding: 8px 25px; 
+          background-color: $deepblue;
+          outline: 0;
+          border: 0;
+          cursor: pointer;
+          @include border-radius(3px);
+          @include transition(background-color .3s);
+          
+          &:hover, &:active {
+            background-color: rgba(23, 28, 35, .9);
+          }
+
+          @include range-width(0, 475px) {
+            display: inline-block;
+            width: 100%;
+            margin: 10px 0;
+          }
+        }
 
         .or_line {
           display: inline-block;
@@ -98,6 +122,14 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
           }
         }
         
+        .code_box {
+          display: inline-block;
+          float: right;
+          width: 385px;
+          height: 40px;
+          background-color: rgba(139, 139, 139, 1.00);
+        }
+
         @include split-left(200px, 'span', 'input');
 
         span, input {
@@ -108,6 +140,14 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
 
         span {
           line-height: 2.5em;
+
+          i {
+            display: inline-block;
+            color: red;
+            font-size: 1rem;
+            font-style: normal;
+            padding-right: 10px;
+          }
         }
 
         input {

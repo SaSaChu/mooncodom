@@ -11,7 +11,7 @@ $(function () {
       return $('<div />').addClass ($(this).hasClass('hnav') ? 'a' : null).append ($(this).clone ());
     }).toArray ())).append ($('<label />').attr ('for', 'menu_ckeckbox'));
 
-  $(".n_picbox, .pic_full, .cent_banner, .ad_pic, .car_banner, .newss .news, .newss .img, .epl_pic, .epr_pic, .banner .item").imgLiquid ();
+  $(".n_picbox, .pic_full, .cent_banner, .ad_pic, .car_banner, .newss .news >a, .newss .img, .epl_pic, .epr_pic, .banner .item .p_picboxs").imgLiquid ();
 
   $('.pop_pic, .p_pic, tbody .img').imgLiquid ({
     fill: false

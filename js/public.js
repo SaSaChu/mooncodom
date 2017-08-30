@@ -11,7 +11,7 @@ $(function () {
       return $('<div />').addClass ($(this).hasClass('hnav') ? 'a' : null).append ($(this).clone ());
     }).toArray ())).append ($('<label />').attr ('for', 'menu_ckeckbox'));
 
-  $(".n_picbox, .pic_full, .cent_banner, .ad_pic, .car_banner, .newss .img, .epl_pic, .epr_pic").imgLiquid ();
+  $(".n_picbox, .pic_full, .cent_banner, .ad_pic, .car_banner, .newss .news, .newss .img, .epl_pic, .epr_pic, .banner .item").imgLiquid ();
 
   $('.pop_pic, .p_pic, tbody .img').imgLiquid ({
     fill: false
@@ -38,7 +38,7 @@ $(function () {
 
     $(this).find ('.left').click (function() {
       // clone是複製前面這組class的意思
-      var a = $(this).find ('.box .item').first ().clone();
+      var a = $(this).find ('.box .item').first ().clone(true);
       $(this).find ('.box .item').first ().remove ();
        // a.appendTo('#box');
        $(this).find ('.box').append(a);
@@ -46,7 +46,7 @@ $(function () {
     }.bind ($(this)));
 
     $(this).find ('.right').click (function() {
-      var a = $(this).find ('.box .item').last ().clone();
+      var a = $(this).find ('.box .item').last ().clone(true);
       $(this).find ('.box .item').last ().remove ();
       // a.prependTo('#box');
       $(this).find ('.box').prepend(a);

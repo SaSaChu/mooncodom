@@ -737,10 +737,11 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
     &.ani {
       @include transition(height .3s, opacity .3s);
     }
-    // display: none;
+    @include clearfix();
+    
     a {
       display: inline-block;
-      width: 100%;
+      width: 88%;
       height: 35px;
       line-height: 35px;
       cursor: pointer;
@@ -748,6 +749,18 @@ $bglightgrey: rgba(248, 248, 248, 1.00);
       font-size: 13px;
       padding-left: 25px;
       border-bottom: 1px dashed rgba(240, 240, 240, 1.00);
+      text-decoration: none;
+      float: left;
+    }
+    i {
+      display: inline-block;
+      width: 12%;
+      height: 35px;
+      line-height: 35px;
+      font-style: normal;
+      cursor: pointer;
+      color: rgba(23, 28, 35, 1.00);
+      font-size: 13px;
     }
 
   }
